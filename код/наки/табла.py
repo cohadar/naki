@@ -6,6 +6,10 @@ MIN_LENGTH = int(os.environ['MIN_LENGTH'])
 MAX_LENGTH = int(os.environ['MAX_LENGTH'])
 
 
+def бајтови(стринг):
+    return bytes(b + 1 for b in bytearray(стринг, 'utf-8'))
+
+
 def један(дупло):
     ба = bytearray(struct.pack('d', дупло))
     непаран = ба[4] & MIN_LENGTH

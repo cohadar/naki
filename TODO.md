@@ -6,8 +6,3 @@ suspend kartu/izvor (umesto delete)
 тестови закрајњи случај када се обнавља карта у последњем интервалу други пут
 edit linka i treća tab kolona koja označava da je override
 сјаjan метod обфусkacije пола reчи na ћириlici пола na латиnici
-
-
-daily trla baba lan
-daily PON trla baba lan
-daily -1 trla baba lan
