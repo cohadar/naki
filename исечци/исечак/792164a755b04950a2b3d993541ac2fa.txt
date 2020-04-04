@@ -1,0 +1,1 @@
+no one cares how many or what objects are created as long as the database is <span class=cloze>[...]</span>.	no one cares how many or what objects are created as long as the database is <span class=cloze>internally consistent</span>.<br> 

@@ -1,0 +1,1 @@
+There’s a lot of good reasons to not have your target platform be your <span class=cloze>[...]</span>.	There’s a lot of good reasons to not have your target platform be your <span class=cloze>development platform</span>.<br> 

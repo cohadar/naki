@@ -1,0 +1,3 @@
+Bash Reference Manual
+http://www.gnu.org/software/bash/manual/bash.html
+http://www.gnu.org/software/bash/manual/bash.html#Introduction

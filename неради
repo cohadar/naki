@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eu
+path="$HOME/me/naki/исечци/неради"
+if [[ $# -eq 0 ]]; then
+	name=$(python -c "import uuid; print(uuid.uuid4().hex + '.txt')")
+	$EDITOR "$path/$name"
+	exit 0
+fi
+command="grep -hre '$*' '$path'"
+eval "$command"

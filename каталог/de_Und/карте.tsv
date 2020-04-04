@@ -1,0 +1,25 @@
+ИД	ВРСТА_КАРТЕ	ПИТАЊЕ	ОДГОВОР	ИЗВОР	ЛИНИЈА
+9ffd96f4a4e84af1b4820a0b0a4301d0	ПРЕВОД <= ГЕРМАНСКИ	neu und alt	novo i staro	de_Und/извор/und.tsv	2
+639b6cd1833746a59cdaff448c3c33a0	ПРЕВОД <= ГЕРМАНСКИ	bilig und teuer	jeftino i skupo	de_Und/извор/und.tsv	3
+b593c06413f04b20b924ba221426e440	ПРЕВОД <= ГЕРМАНСКИ	groß und klein	veliko i malo	de_Und/извор/und.tsv	4
+831929c7065e4485a20aa9678639f330	ПРЕВОД <= ГЕРМАНСКИ	breit und schmal	široko i usko	de_Und/извор/und.tsv	5
+8815deee002249eb9deda9dc505d3890	ПРЕВОД <= ГЕРМАНСКИ	schön und hässlich	lepo i ružno	de_Und/извор/und.tsv	6
+79eca18433d3429cbf7fc57259e0af30	ПРЕВОД <= ГЕРМАНСКИ	hell und dunkel	svetlo i tamno	de_Und/извор/und.tsv	7
+9ffd96f4a4e84af1b4820a0b0a4301d1	ГЕРМАНСКИ <= ПРЕВОД	novo i staro	neu und alt	de_Und/извор/und.tsv	2
+639b6cd1833746a59cdaff448c3c33a1	ГЕРМАНСКИ <= ПРЕВОД	jeftino i skupo	bilig und teuer	de_Und/извор/und.tsv	3
+b593c06413f04b20b924ba221426e441	ГЕРМАНСКИ <= ПРЕВОД	veliko i malo	groß und klein	de_Und/извор/und.tsv	4
+831929c7065e4485a20aa9678639f331	ГЕРМАНСКИ <= ПРЕВОД	široko i usko	breit und schmal	de_Und/извор/und.tsv	5
+8815deee002249eb9deda9dc505d3891	ГЕРМАНСКИ <= ПРЕВОД	lepo i ružno	schön und hässlich	de_Und/извор/und.tsv	6
+79eca18433d3429cbf7fc57259e0af31	ГЕРМАНСКИ <= ПРЕВОД	svetlo i tamno	hell und dunkel	de_Und/извор/und.tsv	7
+9ffd96f4a4e84af1b4820a0b0a4301d2	ПРЕВОД <= ГЕРМАНСКИ	alt und neu	staro i novo	de_Und/извор/und.tsv	2
+639b6cd1833746a59cdaff448c3c33a2	ПРЕВОД <= ГЕРМАНСКИ	teuer und bilig	skupo i jeftino	de_Und/извор/und.tsv	3
+b593c06413f04b20b924ba221426e442	ПРЕВОД <= ГЕРМАНСКИ	klein und groß	malo i veliko	de_Und/извор/und.tsv	4
+831929c7065e4485a20aa9678639f332	ПРЕВОД <= ГЕРМАНСКИ	schmal und breit	usko i široko	de_Und/извор/und.tsv	5
+8815deee002249eb9deda9dc505d3892	ПРЕВОД <= ГЕРМАНСКИ	hässlich und schön	ružno i lepo	de_Und/извор/und.tsv	6
+79eca18433d3429cbf7fc57259e0af32	ПРЕВОД <= ГЕРМАНСКИ	dunkel und hell	tamno i svetlo	de_Und/извор/und.tsv	7
+9ffd96f4a4e84af1b4820a0b0a4301d3	ГЕРМАНСКИ <= ПРЕВОД	staro i novo	alt und neu	de_Und/извор/und.tsv	2
+639b6cd1833746a59cdaff448c3c33a3	ГЕРМАНСКИ <= ПРЕВОД	skupo i jeftino	teuer und bilig	de_Und/извор/und.tsv	3
+b593c06413f04b20b924ba221426e443	ГЕРМАНСКИ <= ПРЕВОД	malo i veliko	klein und groß	de_Und/извор/und.tsv	4
+831929c7065e4485a20aa9678639f333	ГЕРМАНСКИ <= ПРЕВОД	usko i široko	schmal und breit	de_Und/извор/und.tsv	5
+8815deee002249eb9deda9dc505d3893	ГЕРМАНСКИ <= ПРЕВОД	ružno i lepo	hässlich und schön	de_Und/извор/und.tsv	6
+79eca18433d3429cbf7fc57259e0af33	ГЕРМАНСКИ <= ПРЕВОД	tamno i svetlo	dunkel und hell	de_Und/извор/und.tsv	7

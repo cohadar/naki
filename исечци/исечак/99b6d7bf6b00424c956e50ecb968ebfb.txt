@@ -1,0 +1,1 @@
+izvođenje dokaza je postupno ako	koristiš jedan pattern matching po terminu

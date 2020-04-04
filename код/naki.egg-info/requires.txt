@@ -1,0 +1,5 @@
+attrs>=19.3
+blessings>=1.7
+
+[dev]
+pytest

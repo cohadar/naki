@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+код/naki.egg-info/PKG-INFO
+код/naki.egg-info/SOURCES.txt
+код/naki.egg-info/dependency_links.txt
+код/naki.egg-info/requires.txt
+код/naki.egg-info/top_level.txt

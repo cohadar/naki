@@ -1,0 +1,28 @@
+ИД	ВРСТА_КАРТЕ	ПИТАЊЕ	ОДГОВОР	ИЗВОР	ЛИНИЈА
+075aaaef86914a209bc77664a332ba10	ЦЛОЗЕ	Die Chefin kann nicht aufhören, sich über meine Arbeit {{{zu?}}} beschweren!	Die Chefin kann nicht [aufhören], sich über meine Arbeit {zu} beschweren!	de_Cloze/извор/zu.tsv	2
+8897552c42e14b9995af51f523f2e870	ЦЛОЗЕ	Deswegen wollte ich mich um eine neue Stelle {{{zu?}}} bewerben.	Deswegen [wollte] ich mich um eine neue Stelle bewerben.	de_Cloze/извор/zu.tsv	3
+4520e3ebc50f4842bfb24e1b432483b0	ЦЛОЗЕ	Ich höre den Chef {{{zu?}}} kommen.	Ich höre den Chef kommen.	de_Cloze/извор/zu.tsv	4
+4579382b272940ea85234e791f31fd60	ЦЛОЗЕ	Hast du auch vor, im Urlaub {{{zu?}}} verreisen.	[Hast] du auch [vor], im Urlaub {zu} verreisen.	de_Cloze/извор/zu.tsv	5
+a7e9ed221ec840179518055b40c27b90	ЦЛОЗЕ	Mach eine kurze Pause!\nIch sehe dich die ganze Zeit nur am PC {{{zu?}}} arbeiten!	Mach eine kurze Pause!\nIch sehe dich die ganze Zeit nur am PC arbeiten!	de_Cloze/извор/zu.tsv	6
+104d5bce928f44da8cba03fc5113a1f0	ЦЛОЗЕ	Sag mal, Paul, hast du Lust, mit mir in die Kantine {{{zu?}}} gehen?	Sag mal, Paul, [hast] du [Lust], mit mir in die Kantine {zu} gehen?	de_Cloze/извор/zu.tsv	7
+46b10f0d91004d44a61a1cc9859d0e70	ЦЛОЗЕ	Ich glaube, ich möchte versuchen, mein eigenes Projekt {{{zu?}}} starten.	Ich glaube, ich möchte [versuchen], mein eigenes Projekt {zu} starten.	de_Cloze/извор/zu.tsv	8
+d81b6fcb42d84841995de376f535c7c0	ЦЛОЗЕ	Wie oft muss ich dir das {{{zu?}}} sagen?!\nDas darfst du nicht so {{{zu?}}} machen!\nVersuche es anders {{{zu?}}} machen!	Wie oft muss ich dir das sagen?!\nDas darfst du nicht so machen!\n[Versuche] es anders {zu} machen!	de_Cloze/извор/zu.tsv	9
+b44833c58d834e83b8b4170dda08ea40	ЦЛОЗЕ	Vor der Arbeit geht er immer 5 Kilometer {{{zu?}}} joggen.	Vor der Arbeit geht er immer 5 Kilometer joggen.	de_Cloze/извор/zu.tsv	10
+af3d1104ec5c4859923f8e07bde3d110	ЦЛОЗЕ	Ich habe keine Angst, meine Arbeit {{{zu?}}} verlieren.	Ich [habe] keine [Angst], meine Arbeit {zu} verlieren.	de_Cloze/извор/zu.tsv	11
+580d04bbbd35464b9b9fb1a7cf1f4370	ЦЛОЗЕ	Frau Müller, Sie brauchen nicht weiter {{{zu?}}} reden!\nIch verstehe Sie gut!	Frau Müller, Sie [brauchen] [nicht] weiter {zu} reden!\nIch verstehe Sie gut!	de_Cloze/извор/zu.tsv	12
+d41532a3bdb749aea6d7ea21792331e0	ЦЛОЗЕ	Sie sollen nicht weiter {{{zu?}}} reden!	Sie [sollen] nicht weiter reden!	de_Cloze/извор/zu.tsv	13
+4097e07383bc4492aa2e87462ab70790	ЦЛОЗЕ	Der Chef wünscht nicht gestört {{{zu?}}} werden.	Der Chef [wünscht] [nicht] gestört {zu} werden.	de_Cloze/извор/zu.tsv	14
+1f99a863afec4a3f8197161570faced0	ЦЛОЗЕ	Bei uns in der Firma darf man nicht {{{zu?}}} rauchen!	Bei uns in der Firma [darf] man nicht rauchen!	de_Cloze/извор/zu.tsv	15
+1b407d4ff4e849d1b52ee37e6659cf60	ЦЛОЗЕ	Ja, es ist verboten, hier {{{zu?}}} rauchen.	Ja, es [ist] [verboten], hier {zu} rauchen.	de_Cloze/извор/zu.tsv	16
+81eed46a2de14229ae7d4f5f12ae6650	ЦЛОЗЕ	Ich kann es kaum erwarten, in Urlaub {{{zu?}}} fahren!	Ich kann es kaum [erwarten], in Urlaub {zu} fahren!	de_Cloze/извор/zu.tsv	17
+7b235e1645704c9f8cdb9d1f691bd650	ЦЛОЗЕ	Mein Chef will zu viel von mir!\nViele Sachen, die er will, lassen sich überhaupt nicht {{{zu?}}} machen.	Mein Chef will zu viel von mir!\nViele Sachen, die er will, [lassen] sich überhaupt nicht machen.	de_Cloze/извор/zu.tsv	18
+4d856d85ff0a447c972850fadb8de5a0	ЦЛОЗЕ	Für meinen Beruf ist es notwendig, gute Fremdsprachenkenntnisse {{{zu?}}} haben.	Für meinen Beruf [ist] es [notwendig], gute Fremdsprachenkenntnisse {zu} haben.	de_Cloze/извор/zu.tsv	19
+bebe2fa2db80424c81748c04c97f6140	ЦЛОЗЕ	Ach, Sie sind Frau Müller?\nIch freue mich sehr, Sie endlich mal kennen {{{zu?}}} lernen.\nIch wollte Sie schon längst kennen {{{zu?}}} lernen.	Ach, Sie sind Frau Müller?\nIch [freue] [mich] sehr, Sie endlich mal kennen {zu} lernen.\nIch wollte Sie schon längst kennen lernen.	de_Cloze/извор/zu.tsv	20
+12b5761c11f94d0cb749092cc374d060	ЦЛОЗЕ	Nein, samstags und sonntags brauchen Sie nicht {{{zu?}}} arbeiten.	Nein, samstags und sonntags [brauchen] Sie [nicht] {zu} arbeiten.	de_Cloze/извор/zu.tsv	21
+c6d58aaa448a4130881fa75c16c24760	ЦЛОЗЕ	Es ist wirklich eine Freude, in diesem Unternehmen arbeiten {{{zu?}}} können.	Es [ist] wirklich eine [Freude], in diesem Unternehmen arbeiten {zu} können.	de_Cloze/извор/zu.tsv	22
+d83adc28b5534bdd925164c26c4accf0	ЦЛОЗЕ	Familie Berger muss in allen Kisten nach dem Hammer {{{zu?}}} suchen.	Familie Berger [muss] in allen Kisten nach dem Hammer suchen.	de_Cloze/извор/zu.tsv	23
+bf8ff5b002ff4d8b80bb073acb94ecb0	ЦЛОЗЕ	Peter und Paul gehen gern zusammen {{{zu?}}} einkaufen.	Peter und Paul gehen gern zusammen einkaufen.	de_Cloze/извор/zu.tsv	24
+4630f5f731514a668be6cdeaf9a928c0	ЦЛОЗЕ	Milan braucht heute nicht zur Arbeit {{{zu?}}} gehen. Er hat frei.	Milan [braucht] heute [nicht] zur Arbeit {zu} gehen. Er hat frei.	de_Cloze/извор/zu.tsv	25
+5f4e86fba8bd4e4b9f6268f4442fad60	ЦЛОЗЕ	Andrea hat keine Zeit, noch {{{zu?}}} bleiben.	Andrea [hat] keine [Zeit], noch {zu} bleiben.	de_Cloze/извор/zu.tsv	26
+0560fc1fab6b4bc08b87a47cf9df7e50	ЦЛОЗЕ	Herr Müller lässt sich eine Kreditkarte {{{zu?}}} geben.	Herr Müller [lässt] sich eine Kreditkarte geben.	de_Cloze/извор/zu.tsv	27
+0ea9d334a05a44d89008ccc290d44320	ЦЛОЗЕ	Marc hat vergessen, das Geschirr {{{zu?}}} spülen.	Marc hat [vergessen], das Geschirr {zu} spülen.	de_Cloze/извор/zu.tsv	28

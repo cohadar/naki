@@ -1,0 +1,1 @@
+Power is a <span class=cloze>[...]</span> game	Power is a <span class=cloze>zero-sum</span> game<br> 

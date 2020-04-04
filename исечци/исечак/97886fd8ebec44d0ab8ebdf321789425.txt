@@ -1,0 +1,4 @@
+C Is Not a Low-level Language.
+Your computer is not a fast PDP-11.
+
+https://queue.acm.org/detail.cfm?id=3212479

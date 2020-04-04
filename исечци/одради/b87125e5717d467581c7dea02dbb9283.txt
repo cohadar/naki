@@ -1,0 +1,3 @@
+https://en.wikipedia.org/wiki/Hamming_code
+https://en.wikipedia.org/wiki/Reed–Solomon_error_correction
+http://ptgmedia.pearsoncmg.com/images/9780321440303/samplechapter/Chen_bonus_ch02.pdf

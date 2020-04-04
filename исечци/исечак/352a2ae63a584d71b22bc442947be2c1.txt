@@ -1,0 +1,1 @@
+Pošto je email globalni ID, kontrola nad svojim IDjem je veoma važna.<br><br><div>Pošto je email server zavistan on DNS adrese, imati svoj DNS server je još važnije.<br><br>Pošto je https DNS adrese zavisno od CA,<br><br>Imati svoj CA je najvažnije.</div>	mojcert.rs &amp; mojcert.ba

@@ -1,0 +1,1 @@
+Lisp garbage collectors just can't deal with gigs of data, and there's no way to rapidly load gigs of data into a Lisp	Jel ovo problem kome treba rešenje?
