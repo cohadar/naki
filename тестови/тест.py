@@ -1,13 +1,12 @@
 from contextlib import contextmanager
 from blessings import Terminal
-from наки.команда import Команда
 
 
 class СировиТерминал():
     def __init__(бре, команде):
         assert type(команде) == list
         for к in команде:
-            assert type(к) == Команда
+            assert type(к) == str
         бре._и = iter(команде)
         бре._т = Terminal()
         бре.height = 48
@@ -24,10 +23,10 @@ class СировиТерминал():
         pass
 
     def input(бре, *args):
-        return next(бре._и).кодови[0]
+        return next(бре._и)
 
     def readkey(бре, *args):
-        return next(бре._и).кодови[0]
+        return next(бре._и)
 
     def clear(бре):
         pass
@@ -71,7 +70,7 @@ class ТестШпил():
     def __eq__(бре, други):
         if not isinstance(други, ТестШпил):
             return False
-        return бре._активне == други._активне
+        return бре._име == други._име and бре._лен == други._лен
 
     def __repr__(бре):
         return f'ТестШпил({бре._име}{бре._лен})'
@@ -81,48 +80,3 @@ class ТестШпил():
 
     def избаци_промашене(бре):
         бре._лен = max(0, бре._лен - 2)
-
-
-# class ТестТерминал():
-#     def __init__(бре, команде):
-#         бре.команде = команде
-#         бре.и = iter(команде)
-
-#     def инпут(бре, *args):
-#         return next(бре.и)
-
-#     def унеси_команду(бре, *args):
-#         return next(бре.и)
-
-#     def одабери_један(бре, *args):
-#         return next(бре.и)
-
-#     def обриши(*args):
-#         pass
-
-#     @contextmanager
-#     def статус(бре, *args):
-#         try:
-#             yield 117
-#         finally:
-#             pass
-
-#     @contextmanager
-#     def главни(бре, *args):
-#         try:
-#             yield 217
-#         finally:
-#             pass
-
-#     def принт_сепаратор(бре, *args):
-#         pass
-
-#     def принт(бре, *args):
-#         pass
-
-#     def принт_наслов(бре, *args):
-#         pass
-
-#     def принт_мд(бре, *args):
-#         pass
-
