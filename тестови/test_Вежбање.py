@@ -1,8 +1,10 @@
-# from pathlib import Path
-# from shutil import copytree
-# from наки.карте import Вежбање
+from pathlib import Path
+from shutil import copytree
+from наки.карте import Вежбање
+from тест_терминал import ТестТерминал
+from наки.команда import КОМАНДА_ПЛУС1
 
-# ТЕСТ_КАТАЛОГ = Path(__file__).parent.parent.joinpath('тест-фајлови', 'каталог')
+ТЕСТ_КАТАЛОГ = Path(__file__).parent.parent.joinpath('тест-фајлови', 'каталог')
 
 
 # def тест_шпилови():
@@ -16,10 +18,10 @@
 #     ]
 
 
-
-
-# def test_Вежбање_изађи_одмах(tmpdir):
-#     темп_каталог = Path(tmpdir).joinpath('каталог')
-#     copytree(ТЕСТ_КАТАЛОГ, темп_каталог)
-#     тт = ТестТерминал(['к'])
-#     в = Вежбање(темп_каталог)
+def test_одради_све(tmpdir):
+    темп_каталог = Path(tmpdir).joinpath('каталог')
+    copytree(ТЕСТ_КАТАЛОГ, темп_каталог)
+    тт = ТестТерминал([КОМАНДА_ПЛУС1] * 10000)
+    в = Вежбање(темп_каталог.joinpath('тест_без_записа'))
+    в(тт)
+    assert len(в) == 0

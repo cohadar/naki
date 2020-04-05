@@ -9,6 +9,9 @@ class ТестТерминал():
     def инпут(бре, *args):
         return next(бре.и)
 
+    def унеси_команду(бре, *args):
+        return next(бре.и)
+
     def обриши(*args):
         pass
 
@@ -30,4 +33,10 @@ class ТестТерминал():
         pass
 
     def принт(бре, *args):
+        pass
+
+    def принт_наслов(бре, *args):
+        pass
+
+    def принт_мд(бре, *args):
         pass

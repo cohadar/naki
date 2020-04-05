@@ -1,16 +1,12 @@
 import readchar
 from blessings import Terminal
+from наки.команда import Команда, КОМАНДА_ПРЕКИД
+
+УРЕЗ = ' ' * 40
+БОЈА_СИВА = 7
 
 
 class Терминал():
-    УРЕЗ = ' ' * 40
-    СИВА = 7
-    CTRL_C = '\x03'
-    ЕНТЕР = '\r'
-    СПЕЈС = ' '
-    CYR_E = 'е'
-    CYR_F = 'ф'
-    CYR_O = 'о'
 
     def __init__(ја, **kw):
         ја.т = Terminal(**kw)
@@ -33,10 +29,10 @@ class Терминал():
         return ја.т.location(0, ја.т.height-9)
 
     def инпут(ја, текст):
-        return input(Терминал.УРЕЗ + текст)
+        return input(УРЕЗ + текст)
 
     def принт(ја, *args, **kw):
-        print(Терминал.УРЕЗ, end='')
+        print(УРЕЗ, end='')
         print(*args, **kw)
 
     def формат_мд(ја, текст):
@@ -71,24 +67,24 @@ class Терминал():
 
     def принт_сепаратор(ја, c, број=None):
         if број is None:
-            ја.принт(ја.т.color(Терминал.СИВА) + (c * 60) + ја.т.normal)
+            ја.принт(ја.т.color(БОЈА_СИВА) + (c * 60) + ја.т.normal)
         else:
-            ја.принт(ја.т.color(Терминал.СИВА) + (c * 1) + f"[{број}]" + (c * (59 - len(f"[{број}]"))) + ја.т.normal)
+            ја.принт(ја.т.color(БОЈА_СИВА) + (c * 1) + f"[{број}]" + (c * (59 - len(f"[{број}]"))) + ја.т.normal)
 
     def звук_грешке(ја):
         print('\a', end='', flush=True)
 
-    def учитај_кључ(ја, дозвољени_кључеви=None):
-        if дозвољени_кључеви:
+    def унеси_команду(ја, дозвољенe_команде=None):
+        if дозвољенe_команде:
+            assert type(дозвољенe_команде) == list
+            for дк in дозвољенe_команде:
+                assert type(дк) == Команда
             while True:
                 к = readchar.readkey()
-                if к in дозвољени_кључеви:
-                    return к
-                elif к == Терминал.CTRL_C:
-                    return к
-                else:
-                    ја.звук_грешке()
-        return readchar.readkey()
-
-    def јели_прекид_кључ(ја, кључ):
-        return кључ == Терминал.CTRL_C
+                for дк in дозвољенe_команде:
+                    if дк.има(к):
+                        return дк
+                if КОМАНДА_ПРЕКИД.има(к):
+                    return КОМАНДА_ПРЕКИД
+                ја.звук_грешке()
+        return Команда([readchar.readkey()])
