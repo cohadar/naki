@@ -45,7 +45,7 @@ def _рандом_датум():
 
 def извор_учитај(путања):
     рез = []
-    for _ in range(random.randint(50, 100)):
+    for _ in range(random.randint(5, 10)):
         рез.append([
             uuid.uuid4().hex[:-1] + '0',
             _рандом_датум(),

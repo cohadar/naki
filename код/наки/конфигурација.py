@@ -1,5 +1,6 @@
 from pathlib import Path
 ПУТАЊА_КАТАЛОГА = Path(__file__).parent.parent.parent.joinpath('каталог')
+# ПУТАЊА_КАТАЛОГА = Path(__file__).parent.parent.parent.joinpath('тест-фајлови', 'каталог')
 НУЛЕ = 0x00
 ЈЕДИНИЦЕ = 0x11
 ДВОЈКЕ = 0x22
