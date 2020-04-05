@@ -1,12 +1,12 @@
 from наки import одабир
-from наки import карте
 from наки.терминал import Терминал
 from наки.конфигурација import ПУТАЊА_КАТАЛОГА
+from наки.вежбање import Вежбање
 
 
 def учитај_вежбања(каталог):
     шпилови = [шпил for шпил in каталог.iterdir() if шпил.is_dir() and not шпил.name.startswith('__')]
-    return [карте.Вежбање(шпил) for шпил in шпилови]
+    return [Вежбање(шпил) for шпил in шпилови]
 
 
 class Главна():
