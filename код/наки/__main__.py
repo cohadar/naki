@@ -9,7 +9,7 @@ from наки.карте import Шпил
 
 def учитај_вежбања(каталог):
     дирови = [фајл for фајл in каталог.iterdir() if фајл.is_dir() and not фајл.name.startswith('__')]
-    return [Вежбање(Шпил(дир)) for дир in дирови]
+    return [Вежбање(каталог, Шпил(дир)) for дир in дирови]
 
 
 class Главна():
