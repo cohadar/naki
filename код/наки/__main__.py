@@ -63,6 +63,10 @@ def отвори_урл(урл):
         subprocess.Popen(['xdg-open', урл])
 
 
+def звук_грешке():
+    print('\a', end='', flush=True)
+
+
 def главна():
     вежбања = учитај_вежбања(ПУТАЊА_КАТАЛОГА)
     вежбања.sort(key=lambda в: len(в))
@@ -72,6 +76,7 @@ def главна():
     terminal.input = input
     terminal.print = print
     terminal.измени = измени
+    terminal.звук_грешке = звук_грешке
     terminal.отвори_урл = отвори_урл
     # ајмо
     Главна(Терминал(terminal), вежбања)()
