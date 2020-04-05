@@ -1,15 +1,18 @@
+import os
+import sys
 import readchar
+import subprocess
 from blessings import Terminal
 from наки.терминал import Терминал
 from наки.конфигурација import ПУТАЊА_КАТАЛОГА
 from наки.вежбање import Вежбање
 from наки.команда import КОМАНДА_ПРЕКИД, КОМАНДА_ИЗБАЦИ_ПРОМАШЕНЕ, КОМАНДА_ПРЕПОЛОВИ
-from наки.карте import Шпил
+from наки.карте import Шпил, ШпилДиск
 
 
 def учитај_вежбања(каталог):
     дирови = [фајл for фајл in каталог.iterdir() if фајл.is_dir() and not фајл.name.startswith('__')]
-    return [Вежбање(каталог, Шпил(дир)) for дир in дирови]
+    return [Вежбање(каталог, Шпил(ШпилДиск(дир))) for дир in дирови]
 
 
 class Главна():
@@ -42,9 +45,22 @@ class Главна():
                 for в in бре.вежбања:
                     в.преполови()
             elif к in КОМАНДА_ПРЕКИД:
-                return бре.вежбања
+                return [в.сиже() for в in бре.вежбања]
             else:
                 бре.вежбања[к - 1](бре.терминал)
+
+
+def измени(путања, линија):
+    subprocess.run(['vim', '+' + линија, '+normal_WW', str(путања)])
+
+
+def отвори_урл(урл):
+    if sys.platform == 'win32':
+        os.startfile(урл)
+    elif sys.platform == 'darwin':
+        subprocess.Popen(['open', урл])
+    else:
+        subprocess.Popen(['xdg-open', урл])
 
 
 def главна():
@@ -55,6 +71,8 @@ def главна():
     terminal.readkey = readchar.readkey
     terminal.input = input
     terminal.print = print
+    terminal.измени = измени
+    terminal.отвори_урл = отвори_урл
     # ајмо
     Главна(Терминал(terminal), вежбања)()
 
