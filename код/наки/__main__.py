@@ -4,11 +4,12 @@ from наки.терминал import Терминал
 from наки.конфигурација import ПУТАЊА_КАТАЛОГА
 from наки.вежбање import Вежбање
 from наки.команда import КОМАНДА_ПРЕКИД, КОМАНДА_ИЗБАЦИ_ПРОМАШЕНЕ, КОМАНДА_ПРЕПОЛОВИ
+from наки.карте import Шпил
 
 
 def учитај_вежбања(каталог):
-    шпилови = [шпил for шпил in каталог.iterdir() if шпил.is_dir() and not шпил.name.startswith('__')]
-    return [Вежбање(шпил) for шпил in шпилови]
+    дирови = [фајл for фајл in каталог.iterdir() if фајл.is_dir() and not фајл.name.startswith('__')]
+    return [Вежбање(Шпил(дир)) for дир in дирови]
 
 
 class Главна():
