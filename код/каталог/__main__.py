@@ -23,7 +23,7 @@ def одради_шпил(шпил):
     име_шпила = шпил.name
     if име_шпила in ["de_Basic", "de_Präteritum"]:
         from каталог.извори.de_basic import извор_учитај, извор_одради
-    elif име_шпила in ["de_regelmäßige_Verben", "de_unregelmäßige_Verben"]:
+    elif име_шпила in ["de_Verben"]:
         from каталог.извори.de_verben import извор_учитај, извор_одради
     elif име_шпила == "de_Nomen":
         from каталог.извори.de_nomen import извор_учитај, извор_одради
@@ -31,7 +31,7 @@ def одради_шпил(шпил):
         from каталог.извори.de_und import извор_учитај, извор_одради
     elif име_шпила == "de_Cloze":
         from каталог.извори.de_cloze import извор_учитај, извор_одради
-    elif име_шпила == "de_Einweg":
+    elif име_шпила in ["de_Einweg", "чворови"]:
         from каталог.извори.de_einweg import извор_учитај, извор_одради
     elif име_шпила == "песме":
         from каталог.извори.песме import извор_учитај, извор_одради

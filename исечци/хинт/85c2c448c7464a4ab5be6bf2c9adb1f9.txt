@@ -1,0 +1,1 @@
+ssh-keygen -R 1.1.1.1  # briše ip iz known_hosts
