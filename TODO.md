@@ -13,6 +13,7 @@ edit linka i treća tab kolona koja označava da je override
 bekannt bei/für
 Berlin ist bei den Touristen für sein StreetfoodEssen bekannt
 
+IZLISTAJ PROMASENE
 
 izbaciti samo nepogledane, izbaci pogledane
 
@@ -30,3 +31,15 @@ https://quizlet.com/160374720
 
 
 https://learningapps.org/display?v=paehsyzuk20
+https://learningapps.org/display?v=ph3hyvqht20
+
+integrisati karte sa isečcima nekako, bolji browse metod od ovog trenutno.
+VIM PLUGINOVI BREEEEEE
+
+
+svaki dan ne radi svaki dan
+
+
+INSERT da moже да се ради командом из сваког дела накија, то није проблем пошто су извори одвојени од карата.
+
+

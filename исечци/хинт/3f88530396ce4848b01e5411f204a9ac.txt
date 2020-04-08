@@ -1,0 +1,2 @@
+kindle lokacija knjiga
+/Users/cohadar/Library/Containers/com.amazon.Kindle/Data/Library/Application Support/Kindle/My Kindle Content
