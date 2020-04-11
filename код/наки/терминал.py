@@ -1,5 +1,7 @@
 import os
 import sys
+import time
+import uuid
 import subprocess
 import readchar
 from blessings import Terminal
@@ -80,5 +82,6 @@ class Терминал():
         subprocess.run(['vim', '+' + линија, '+normal_WW', str(путања)])
 
     def додај_на_извор(бре, путања):
-        subprocess.run(['vim', '+normal_Go', str(путања)])
+        toappend = uuid.uuid4().hex[:-1] + '0' + '\t' + time.strftime('%Y-%m-%d') + '\t'
+        subprocess.run(['vim', f"+normal_Go{toappend}", '+startinsert!', str(путања)])
 
