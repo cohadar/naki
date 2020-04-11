@@ -34,6 +34,20 @@ class ТестТерминал(Терминал):
         finally:
             pass
 
+    @contextmanager
+    def пун_екран(бре):
+        try:
+            yield 'пун_екран'
+        finally:
+            pass
+
+    @contextmanager
+    def сакривен_курсор(бре):
+        try:
+            yield 'сакривен_курсор'
+        finally:
+            pass
+
     def инпут(бре, текст):
         return next(бре._и)
 
