@@ -25,10 +25,6 @@ for 80%
 0.9976 - 94
 0.99905 - 234
 
-TODO: select ITEM_TYPE for review
-randomize inside ITEM_TYPE
-randomize on all
-
 
 hint term1 term2
   vradi tekstove koji imaju jedan i dva

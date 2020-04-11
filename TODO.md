@@ -15,9 +15,6 @@ Berlin ist bei den Touristen für sein StreetfoodEssen bekannt
 
 komande slagati, svaka da ima tekst, i da se naredjaju ispod
 
-id provera formata, id skup provera jedinstvenosti
-
-
 Du sprichts die ganze Zeit, statt Deutsch zu lernen.
 Du bist gegangen, ohne ein Wort zu sagen.
 
