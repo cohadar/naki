@@ -1,4 +1,3 @@
-# TODO: *ars u __init__
 class Команда():
     def __init__(бре, кодови):
         if isinstance(кодови, list):
