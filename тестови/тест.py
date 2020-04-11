@@ -4,10 +4,9 @@ import random
 from pathlib import Path
 from contextlib import contextmanager
 from наки.карте import направи_карте
-from наки.терминал import Терминал
 
 
-class ТестТерминал(Терминал):
+class ТестТерминал():
     def __init__(бре, команде):
         assert type(команде) == list
         for к in команде:
@@ -77,6 +76,9 @@ class ТестТерминал(Терминал):
 
     def измени(бре, права_путања, линија):
         бре.измене.append((права_путања, линија))
+
+    def додај_на_извор(бре, путања):
+        pass
 
     def звук_грешке(бре):
         бре.звукова += 1

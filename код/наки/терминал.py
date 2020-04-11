@@ -76,5 +76,9 @@ class Терминал():
         else:
             subprocess.Popen(['xdg-open', урл])
 
-    def измени(бре, права_путања, линија):
-        subprocess.run(['vim', '+' + линија, '+normal_WW', str(права_путања)])
+    def измени(бре, путања, линија):
+        subprocess.run(['vim', '+' + линија, '+normal_WW', str(путања)])
+
+    def додај_на_извор(бре, путања):
+        subprocess.run(['vim', '+normal_Go', str(путања)])
+
