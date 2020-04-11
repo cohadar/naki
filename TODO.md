@@ -1,5 +1,5 @@
 претражи код за ТОДО i TODO коментаре
-дугме за уназад да се поправи мисклик
+дугме за уназад да се поправи мисклик - ili moжда не, можда је губљење времена скупље него бити 100% исправан
 suspend kartu/izvor (umesto delete) - za pesme za sad
 ако је претходно био фаил, карта на ентер да добија +1 уместо +2 (или још боље да уопште нема +2 опција па да сигналује звук грешке)
 масивни тестови
@@ -12,10 +12,6 @@ edit linka i treća tab kolona koja označava da je override
 
 bekannt bei/für
 Berlin ist bei den Touristen für sein StreetfoodEssen bekannt
-
-IZLISTAJ PROMASENE
-
-izbaciti samo nepogledane, izbaci pogledane
 
 komande slagati, svaka da ima tekst, i da se naredjaju ispod
 
@@ -39,6 +35,4 @@ VIM PLUGINOVI BREEEEEE
 
 svaki dan ne radi svaki dan
 
-
 INSERT da moже да се ради командом из сваког дела накија, то није проблем пошто су извори одвојени од карата.
-

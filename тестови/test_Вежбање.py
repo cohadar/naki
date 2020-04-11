@@ -2,6 +2,7 @@ from pathlib import Path
 from наки.вежбање import Вежбање
 from наки.терминал import Терминал
 from наки.карте import Шпил
+from наки.ui import UI
 from тест import СировиТерминал, шпил_лоадер
 from наки.команда import КОД_СПЕЈС
 from наки.команда import КОД_ЕНТЕР
@@ -20,7 +21,7 @@ def вв():
 
 
 def тт(кодови):
-    return Терминал(СировиТерминал(кодови))
+    return UI(Терминал(СировиТерминал(кодови)))
 
 
 def test_одради_све():
@@ -61,7 +62,7 @@ def test_едит_на_питању():
     assert len(в) == 0
     assert неодрађене == ПУН_ШПИЛ
     assert промашене == 0
-    assert len(т.т.измене) == 1
+    assert len(т.т.т.измене) == 1
 
 
 def test_едит_на_одговору():
@@ -72,7 +73,7 @@ def test_едит_на_одговору():
     assert len(в) == 0
     assert неодрађене == ПУН_ШПИЛ
     assert промашене == 0
-    assert len(т.т.измене) == 1
+    assert len(т.т.т.измене) == 1
 
 
 def test_линк_на_питању():
@@ -83,7 +84,7 @@ def test_линк_на_питању():
     assert len(в) == 0
     assert неодрађене == ПУН_ШПИЛ
     assert промашене == 0
-    assert len(т.т.отварања) == 1
+    assert len(т.т.т.отварања) == 1
 
 
 def test_линк_на_одговору():
@@ -94,7 +95,7 @@ def test_линк_на_одговору():
     assert len(в) == 0
     assert неодрађене == ПУН_ШПИЛ
     assert промашене == 0
-    assert len(т.т.отварања) == 1
+    assert len(т.т.т.отварања) == 1
 
 
 def test_недозвољенe_командe():
@@ -105,7 +106,7 @@ def test_недозвољенe_командe():
     assert len(в) == 0
     assert неодрађене == ПУН_ШПИЛ
     assert промашене == 0
-    assert т.т.звукова == 2
+    assert т.т.т.звукова == 2
 
 
 def test_неколико_прегледа():
