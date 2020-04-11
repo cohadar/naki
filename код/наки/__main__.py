@@ -1,8 +1,3 @@
-import os
-import sys
-import readchar
-import subprocess
-from blessings import Terminal
 from наки.терминал import Терминал
 from наки.конфигурација import ПУТАЊА_КАТАЛОГА
 from наки.вежбање import Вежбање
@@ -63,36 +58,10 @@ class Главна():
         return [в.сиже() for в in бре.вежбања]
 
 
-def измени(путања, линија):
-    subprocess.run(['vim', '+' + линија, '+normal_WW', str(путања)])
-
-
-def отвори_урл(урл):
-    if sys.platform == 'win32':
-        os.startfile(урл)
-    elif sys.platform == 'darwin':
-        subprocess.Popen(['open', урл])
-    else:
-        subprocess.Popen(['xdg-open', урл])
-
-
-def звук_грешке():
-    print('\a', end='', flush=True)
-
-
 def главна():
     вежбања = учитај_вежбања(ПУТАЊА_КАТАЛОГА)
     вежбања.sort(key=lambda в: len(в))
-    terminal = Terminal()
-    # залепи сирове метода на терминал објекат, лакше него завити у нову класу
-    terminal.readkey = readchar.readkey
-    terminal.input = input
-    terminal.print = print
-    terminal.измени = измени
-    terminal.звук_грешке = звук_грешке
-    terminal.отвори_урл = отвори_урл
-    # ајмо
-    Главна(UI(Терминал(terminal)), вежбања)()
+    Главна(UI(Терминал()), вежбања)()
 
 
 if __name__ == '__main__':

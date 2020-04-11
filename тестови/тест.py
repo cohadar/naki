@@ -3,55 +3,66 @@ import uuid
 import random
 from pathlib import Path
 from contextlib import contextmanager
-from blessings import Terminal
 from наки.карте import направи_карте
+from наки.терминал import Терминал
 
 
-class СировиТерминал():
+class ТестТерминал(Терминал):
     def __init__(бре, команде):
         assert type(команде) == list
         for к in команде:
             assert type(к) == str
         бре._и = iter(команде)
-        бре._т = Terminal()
-        бре.height = 48
-        бре.width = 170
         бре.измене = []
         бре.отварања = []
         бре.звукова = 0
+        бре._болд = '[bold]'
+        бре._плаво = '[blue]'
+        бре._нормал = '[/normal]'
 
     @contextmanager
-    def location(бре, x, y):
+    def статус(бре):
         try:
-            yield 'trla baba lan'
+            yield 'статус'
         finally:
             pass
 
-    def print(бре, *args, **kw):
-        pass
+    @contextmanager
+    def главни(бре):
+        try:
+            yield 'главни'
+        finally:
+            pass
 
-    def input(бре, *args):
+    def инпут(бре, текст):
         return next(бре._и)
 
-    def readkey(бре, *args):
+    def инпут_код(бре):
         return next(бре._и)
 
-    def clear(бре):
+    def формат_мд(бре, текст):
+        return текст
+
+    def обриши(бре):
         pass
 
-    def __getattr__(бре, атрибут):
-        if атрибут in ['color', 'normal', 'green', 'bold', 'blue']:
-            рез = getattr(бре._т, атрибут)
-            if рез is None:
-                raise ValueError(f'nesme none {атрибут}')
-            return рез
-        raise AttributeError(атрибут)
+    def принт(бре, *args, **kw):
+        pass
 
-    def измени(бре, путања, линија):
-        бре.измене.append((str(путања), линија))
+    def принт_сиво(бре, текст):
+        pass
+
+    def принт_плаво(бре, текст):
+        pass
+
+    def принт_зелено(бре, текст):
+        pass
 
     def отвори_урл(бре, урл):
         бре.отварања.append(урл)
+
+    def измени(бре, права_путања, линија):
+        бре.измене.append((права_путања, линија))
 
     def звук_грешке(бре):
         бре.звукова += 1
