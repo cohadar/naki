@@ -1,6 +1,7 @@
 претражи код за TODO коментаре
 
 дугме за уназад да се поправи мисклик - ili moжда не, можда је губљење времена скупље него бити 100% исправан
+unazad je ok, ako oćeš da se vratiš da otvoriš link ili da edituješ!
 
 suspend kartu/izvor (umesto delete) - za pesme za sad
 
