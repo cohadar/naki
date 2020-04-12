@@ -37,3 +37,10 @@ INSERT da moже да се ради командом из сваког дела 
 
 
 измени, и додај и отвори урл да су методе ма извору?
+
+prijavi zapise koji nemaju kartu!
+
+
+hint1 - prikazati svaki четврти карактер
+хинт2 - прикаѕати сваки други карактер!
+hintovi da ti smanje interval za trecinu, dvetrecine
