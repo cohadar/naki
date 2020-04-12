@@ -1,0 +1,19 @@
+ИД	ВРСТА_КАРТЕ	ПИТАЊЕ	ОДГОВОР	ИЗВОР	ЛИНИЈА
+68f37c186d1e44c4ba9f0e7a0f4c4fa0	ГЕНИТИВ <= НОМИНАТИВ	der Mann	des Mannes	de_Deklination/извор/извор.tsv	2
+e09a3fe31f304dcd9f13eec05452c6c0	ГЕНИТИВ <= НОМИНАТИВ	die Frau	der Frau	de_Deklination/извор/извор.tsv	3
+ee861688fc754d46a5b82bf44442c080	ГЕНИТИВ <= НОМИНАТИВ	das Kind	des Kindes	de_Deklination/извор/извор.tsv	4
+7fe3e05782484ffda2446ce9e15291b0	ГЕНИТИВ <= НОМИНАТИВ	die Männer	der Männer	de_Deklination/извор/извор.tsv	5
+a0464a51fb5f4f17a10d37e7163c9350	ГЕНИТИВ <= НОМИНАТИВ	die Frauen	der Frauen	de_Deklination/извор/извор.tsv	6
+df7eb6fe546f4299a28c83c63ad98a90	ГЕНИТИВ <= НОМИНАТИВ	die Kinder	der Kinder	de_Deklination/извор/извор.tsv	7
+68f37c186d1e44c4ba9f0e7a0f4c4fa1	ДАТИВ <= НОМИНАТИВ	der Mann	dem Mann(e)	de_Deklination/извор/извор.tsv	2
+e09a3fe31f304dcd9f13eec05452c6c1	ДАТИВ <= НОМИНАТИВ	die Frau	der Frau	de_Deklination/извор/извор.tsv	3
+ee861688fc754d46a5b82bf44442c081	ДАТИВ <= НОМИНАТИВ	das Kind	dem Kind(e)	de_Deklination/извор/извор.tsv	4
+7fe3e05782484ffda2446ce9e15291b1	ДАТИВ <= НОМИНАТИВ	die Männer	den Männern	de_Deklination/извор/извор.tsv	5
+a0464a51fb5f4f17a10d37e7163c9351	ДАТИВ <= НОМИНАТИВ	die Frauen	den Frauen	de_Deklination/извор/извор.tsv	6
+df7eb6fe546f4299a28c83c63ad98a91	ДАТИВ <= НОМИНАТИВ	die Kinder	den Kindern	de_Deklination/извор/извор.tsv	7
+68f37c186d1e44c4ba9f0e7a0f4c4fa2	АКУЗАТИВ <= НОМИНАТИВ	der Mann	den Mann	de_Deklination/извор/извор.tsv	2
+e09a3fe31f304dcd9f13eec05452c6c2	АКУЗАТИВ <= НОМИНАТИВ	die Frau	die Frau	de_Deklination/извор/извор.tsv	3
+ee861688fc754d46a5b82bf44442c082	АКУЗАТИВ <= НОМИНАТИВ	das Kind	das Kind	de_Deklination/извор/извор.tsv	4
+7fe3e05782484ffda2446ce9e15291b2	АКУЗАТИВ <= НОМИНАТИВ	die Männer	die Männer	de_Deklination/извор/извор.tsv	5
+a0464a51fb5f4f17a10d37e7163c9352	АКУЗАТИВ <= НОМИНАТИВ	die Frauen	die Frauen	de_Deklination/извор/извор.tsv	6
+df7eb6fe546f4299a28c83c63ad98a92	АКУЗАТИВ <= НОМИНАТИВ	die Kinder	die Kinder	de_Deklination/извор/извор.tsv	7

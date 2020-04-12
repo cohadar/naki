@@ -31,6 +31,8 @@ def одради_шпил(шпил):
         from каталог.извори.de_und import извор_учитај, извор_одради
     elif име_шпила == "de_Cloze":
         from каталог.извори.de_cloze import извор_учитај, извор_одради
+    elif име_шпила == "de_Deklination":
+        from каталог.извори.de_deklination import извор_учитај, извор_одради
     elif име_шпила in ["de_Einweg", "чворови", "_SVAKI_DAN_"]:
         from каталог.извори.de_einweg import извор_учитај, извор_одради
     elif име_шпила == "песме":
