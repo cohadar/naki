@@ -1,4 +1,12 @@
 ИД	ВРСТА_КАРТЕ	ПИТАЊЕ	ОДГОВОР	ИЗВОР	ЛИНИЈА
+7c2b5cc5ba6c46d0a8bccbaca7329bf0	ОДГОВОР <= ПИТАЊЕ	{Possessivartikel} ich	mein	de_Einweg/извор/Possessivartikel.tsv	2
+29f6f7a1dadc4811a3510c000e8672c0	ОДГОВОР <= ПИТАЊЕ	{Possessivartikel} du	dein	de_Einweg/извор/Possessivartikel.tsv	3
+e85ce1501314441091c3243469458a40	ОДГОВОР <= ПИТАЊЕ	{Possessivartikel} er	sein	de_Einweg/извор/Possessivartikel.tsv	4
+78da2266311349f99a3b95bd723fe6b0	ОДГОВОР <= ПИТАЊЕ	{Possessivartikel} sie	ihr	de_Einweg/извор/Possessivartikel.tsv	5
+f66d459efe9e47bba4951708da2493f0	ОДГОВОР <= ПИТАЊЕ	{Possessivartikel} es	sein	de_Einweg/извор/Possessivartikel.tsv	6
+a3538d4753e446a78c315210cd13c4b0	ОДГОВОР <= ПИТАЊЕ	{Possessivartikel} wir	unser	de_Einweg/извор/Possessivartikel.tsv	7
+b27ad41add1f4df896a015c5609b5e90	ОДГОВОР <= ПИТАЊЕ	{Possessivartikel} ihr	euer	de_Einweg/извор/Possessivartikel.tsv	8
+7d520c05545344dabad8099ca0eccde0	ОДГОВОР <= ПИТАЊЕ	{Possessivartikel} Sie	Ihr	de_Einweg/извор/Possessivartikel.tsv	9
 4404429924a5418ab8129546a09023b0	ОДГОВОР <= ПИТАЊЕ	es - schön sein - dich wiedersehen	Es ist schön, dich wieder[zu]sehen.	de_Einweg/извор/zu.tsv	2
 91b30b9321cb4b4d88970bf113ec8000	ОДГОВОР <= ПИТАЊЕ	ich - versuchen - dich morgen anrufen	Ich versuche, dich morgen an[zu]rufen.	de_Einweg/извор/zu.tsv	3
 879069b016e24afea770cf0c4fcc6520	ОДГОВОР <= ПИТАЊЕ	er - Angst haben - Fehler machen	Er hat Angst, Fehler [zu] machen.	de_Einweg/извор/zu.tsv	4
