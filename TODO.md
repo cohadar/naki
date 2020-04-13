@@ -23,6 +23,8 @@ https://quizlet.com/160374720
 
 https://learningapps.org/display?v=paehsyzuk20
 https://learningapps.org/display?v=ph3hyvqht20
+https://learningapps.org/display?v=pq18gp3b518
+https://learningapps.org/display?v=pqtbud8oc18
 
 integrisati karte sa isečcima nekako, bolji browse metod od ovog trenutno.
 VIM PLUGINOVI BREEEEEE
