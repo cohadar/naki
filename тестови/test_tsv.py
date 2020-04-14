@@ -3,6 +3,7 @@ from наки import tsv
 from enum import IntEnum, unique
 from pathlib import Path
 from shutil import copy
+from тест import фајл_хеш
 
 
 @unique
@@ -37,10 +38,6 @@ class КолонеПогрешноИме(IntEnum):
     ПРЕВОД = 6
 
 
-def _линије(путања):
-    return open(путања, "r").readlines()
-
-
 def test_учитај_фајл():
     path = Path('тест-фајлови/tsv/ok10.tsv')
     rows = tsv.учитај_фајл(path, Колоне)
@@ -71,13 +68,13 @@ def test_додај_на_фајл_постоји(tmpdir):
     copy('тест-фајлови/tsv/ok08.tsv', tmpdir)
     path = Path(tmpdir).joinpath('ok08.tsv')
     tsv.додај_на_фајл(path, Колоне, РЕДОВИ)
-    assert _линије('тест-фајлови/tsv/ok10.tsv') == _линије(path)
+    assert фајл_хеш('тест-фајлови/tsv/ok10.tsv') == фајл_хеш(path)
 
 
 def test_додај_на_фајл_непостоји(tmpdir):
     path = Path(tmpdir).joinpath('ok_ново.tsv')
     tsv.додај_на_фајл(path, Колоне, РЕДОВИ)
-    assert _линије('тест-фајлови/tsv/ok02.tsv') == _линије(path)
+    assert фајл_хеш('тест-фајлови/tsv/ok02.tsv') == фајл_хеш(path)
 
 
 def test_додај_на_фајл_КолонеПогрешнаВеличина(tmpdir):
@@ -92,3 +89,23 @@ def test_додај_на_фајл_КолонеИменаСеНеПоклапај
     path = Path(tmpdir).joinpath('ok10.tsv')
     with pytest.raises(tsv.КолонеИменаСеНеПоклапајуГрешка):
         tsv.додај_на_фајл(path, КолонеПогрешноИме, РЕДОВИ)
+
+
+def test_препиши_фајл_нови(tmpdir):
+    copy('тест-фајлови/tsv/ok10.tsv', tmpdir)
+    фајл1 = Path(tmpdir).joinpath('ok10.tsv')
+    фајл2 = Path(tmpdir).joinpath('ok10_нови.tsv')
+    rows = tsv.учитај_фајл(фајл1, Колоне)
+    tsv.препиши_фајл(фајл2, Колоне, rows)
+    assert фајл_хеш(фајл1) == фајл_хеш(фајл2)
+
+
+def test_препиши_фајл_постојећи(tmpdir):
+    copy('тест-фајлови/tsv/ok10.tsv', tmpdir)
+    copy('тест-фајлови/tsv/ok02.tsv', tmpdir)
+    фајл1 = Path(tmpdir).joinpath('ok10.tsv')
+    фајл2 = Path(tmpdir).joinpath('ok02.tsv')
+    assert фајл_хеш(фајл1) != фајл_хеш(фајл2)
+    rows = tsv.учитај_фајл(фајл1, Колоне)
+    tsv.препиши_фајл(фајл2, Колоне, rows)
+    assert фајл_хеш(фајл1) == фајл_хеш(фајл2)

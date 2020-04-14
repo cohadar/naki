@@ -1,5 +1,5 @@
 100% pokrivenost testovima breeeee!
-
+izdvoj intervale u odvojenu klasu koja rade sve operacije sa intervalima!
 
 претражи код за TODO коментаре
 

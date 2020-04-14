@@ -2,8 +2,17 @@ import time
 import uuid
 import random
 from pathlib import Path
+from hashlib import sha256
 from contextlib import contextmanager
 from наки.карте import направи_карте, Карта
+
+
+def фајл_хеш(path1):
+    with open(path1, 'r') as ф:
+        садржај = ф.read()
+        м = sha256()
+        м.update(bytes(садржај, 'utf-8'))
+        return м.hexdigest()
 
 
 class ТестТерминал():
