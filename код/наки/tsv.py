@@ -13,8 +13,8 @@ class КолонеИменаСеНеПоклапајуГрешка(ValueError):
 
 def учитај_фајл(путања, колоне):
     """ враћа листу редова """
-    assert isinstance(путања, pathlib.Path)
-    assert isinstance(колоне, EnumMeta)
+    assert isinstance(путања, pathlib.Path), путања
+    assert isinstance(колоне, EnumMeta), колоне
     редови = []
     with путања.open('r', newline='') as ф:
         tsv = csv.reader(ф, delimiter='\t')
@@ -30,8 +30,8 @@ def учитај_фајл(путања, колоне):
 
 
 def препиши_фајл(путања, колоне, редови):
-    assert isinstance(путања, pathlib.Path)
-    assert isinstance(колоне, EnumMeta)
+    assert isinstance(путања, pathlib.Path), путања
+    assert isinstance(колоне, EnumMeta), колоне
     with путања.open('w', newline='') as ф:
         tsv = csv.writer(ф, delimiter='\t', lineterminator='\n')
         tsv.writerow([к.name for к in колоне])
@@ -42,8 +42,8 @@ def препиши_фајл(путања, колоне, редови):
 
 
 def додај_на_фајл(путања, колоне, редови):
-    assert isinstance(путања, pathlib.Path)
-    assert isinstance(колоне, EnumMeta)
+    assert isinstance(путања, pathlib.Path), путања
+    assert isinstance(колоне, EnumMeta), колоне
     """ додај редове у фајл """
     додај_заглавље = False
     if путања.exists():
