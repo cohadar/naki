@@ -1,6 +1,6 @@
 from pathlib import Path
 from наки.вежбање import Вежбање
-from наки.карте import Шпил
+from наки.шпил import Шпил
 from наки.ui import UI
 from тест import ТестТерминал, шпил_лоадер
 from наки.команда import КОД_СПЕЈС

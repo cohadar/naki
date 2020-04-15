@@ -4,6 +4,7 @@ from enum import IntEnum, unique
 from pathlib import Path
 from shutil import copy
 from тест import фајл_хеш
+from collections import namedtuple
 
 
 @unique
@@ -15,6 +16,9 @@ class Колоне(IntEnum):
     ПРЕТЕРИТ = 4
     ПЕРФЕКТ = 5
     ПРЕВОД = 6
+
+
+ТипКолоне = namedtuple('ТипКолоне', ['ИД', 'ДАТУМ', 'ИНФИНИТИВ', 'ПРЕЗЕНТ', 'ПРЕТЕРИТ', 'ПЕРФЕКТ', 'ПРЕВОД'])
 
 
 @unique
@@ -42,6 +46,14 @@ def test_учитај_фајл():
     path = Path('тест-фајлови/tsv/ok10.tsv')
     rows = tsv.учитај_фајл(path, Колоне)
     assert len(rows) == 10
+
+
+def test_учитај():
+    путања = Path('тест-фајлови/tsv/ok10.tsv')
+    редови = tsv.учитај(путања, ТипКолоне)
+    assert len(редови) == 10
+    for ред in редови:
+        assert isinstance(ред, ТипКолоне)
 
 
 def test_учитај_фајл_КолонеПогрешнаВеличина():

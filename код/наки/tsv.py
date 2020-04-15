@@ -29,6 +29,28 @@ def учитај_фајл(путања, колоне):
     return редови
 
 
+def учитај(путања, Тип):
+    """ враћа листу редова """
+    assert isinstance(путања, pathlib.Path), путања
+    assert isinstance(Тип, type), Тип
+    редови = []
+    with путања.open('r', newline='') as ф:
+        tsv = csv.reader(ф, delimiter='\t')
+        for и, ред in enumerate(tsv, 1):
+            if len(Тип._fields) != len(ред):
+                порука = f'[{путања}][ЛИНИЈА: {и}] очекивано: {len(Тип)}, нађено: {len(ред)}'
+                raise КолонеПогрешнаВеличинаГрешка(порука)
+            if и == 1:
+                заглавље = ред
+                for и, колона in enumerate(Тип._fields):
+                    if колона.upper() != заглавље[и]:
+                        порука = f'[{путања}]ЗАГЛАВЉА_СЕ_НЕ_ПОКЛАПАЈУ: {колона} != {заглавље[и]}'
+                        raise КолонеИменаСеНеПоклапајуГрешка(порука)
+            else:
+                редови.append(Тип(*ред))
+    return редови
+
+
 def препиши_фајл(путања, колоне, редови):
     assert isinstance(путања, pathlib.Path), путања
     assert isinstance(колоне, EnumMeta), колоне

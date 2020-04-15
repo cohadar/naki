@@ -1,4 +1,4 @@
-from наки.карте import Шпил
+from наки.шпил import Шпил
 
 
 def test_лош_интервал():
