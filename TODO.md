@@ -1,6 +1,8 @@
 100% pokrivenost testovima breeeee!
 izdvoj intervale u odvojenu klasu koja rade sve operacije sa intervalima!
 
+
+
 претражи код за TODO коментаре
 
 дугме за уназад да се поправи мисклик - ili moжда не, можда је губљење времена скупље него бити 100% исправан
