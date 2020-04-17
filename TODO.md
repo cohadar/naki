@@ -52,3 +52,4 @@ prijavi zapise koji nemaju kartu!
 hint1 - prikazati svaki четврти карактер
 хинт2 - прикаѕати сваки други карактер!
 hintovi da ti smanje interval za trecinu, dvetrecine
+
