@@ -1,5 +1,6 @@
 import pytest
 from наки import tsv
+from наки.tsv import Табела
 from enum import IntEnum, unique
 from pathlib import Path
 from shutil import copy
@@ -50,7 +51,8 @@ def test_учитај_фајл():
 
 def test_учитај():
     путања = Path('тест-фајлови/tsv/ok10.tsv')
-    редови = tsv.учитај(путања, ТипКолоне)
+    табела = Табела(путања, ТипКолоне)
+    редови = табела.учитај_редове()
     assert len(редови) == 10
     for ред in редови:
         assert isinstance(ред, ТипКолоне)
