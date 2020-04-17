@@ -4,7 +4,7 @@ from наки.ид import assert_ид
 from datetime import date
 from enum import unique, IntEnum
 from collections import namedtuple, Counter
-from наки.интервали import ИнтервалиЕнум
+from наки.интервали import БРОЈ_ИНТЕРВАЛА
 
 
 @unique
@@ -93,7 +93,7 @@ class ПогледЗаписа():
         задњи_интервали = {}
         for за in бре._табела:
             задњи_интервали[за[ЗаписЕнум.КАРТА_ИД]] = int(за[ЗаписЕнум.НОВИ_ИНТЕРВАЛ])
-        рез = [0] * len(ИнтервалиЕнум)
+        рез = [0] * БРОЈ_ИНТЕРВАЛА
         for _, зи in задњи_интервали.items():
             рез[зи] += 1
         return рез
