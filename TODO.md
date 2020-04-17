@@ -1,3 +1,4 @@
+python dependency injection!
 vim ћирилица ремап да могу да користим команде и у цир моду
 100% pokrivenost testovima breeeee!
 testovi i za каталог funkcije
