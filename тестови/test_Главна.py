@@ -1,4 +1,4 @@
-from наки.__main__ import Главна
+from наки.главна import Главна
 from наки.вежбање import Вежбање
 from наки.шпил import Шпил
 from наки.ui import UI

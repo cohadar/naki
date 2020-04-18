@@ -1,3 +1,4 @@
+custom tastatura za cirilicu koja ne menja spec karaktere
 python dependency injection!
 vim ћирилица ремап да могу да користим команде и у цир моду
 100% pokrivenost testovima breeeee!
