@@ -9,6 +9,7 @@ from наки.интервали import ПогледИнтервала
 from наки.запис import ПогледЗаписа
 from наки.линкови import ПогледЛинкова
 from наки.карте import ПогледКарти
+from наки.__main__ import М
 
 
 def фајл_хеш(path1):
@@ -17,6 +18,14 @@ def фајл_хеш(path1):
         м = sha256()
         м.update(bytes(садржај, 'utf-8'))
         return м.hexdigest()
+
+
+class Т(М):
+    def Терминал(бре):
+        return ТестТерминал()
+
+    def шпилови(бре):
+        return None
 
 
 class ТестТерминал():
