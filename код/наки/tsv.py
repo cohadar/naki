@@ -19,6 +19,23 @@ class КолонеИменаСеНеПоклапајуГрешка(ValueError):
     pass
 
 
+def namedtuple(Тип):
+    """ украшава namedtuple Тип sa atributima potrebnim za tsv серијалиѕацију """
+    def заглавље():
+        return [п.upper() for п in Тип._fields]
+
+    def ред(елемент):
+        return list(елемент)
+
+    def елемент(ред):
+        return Тип(*ред)
+
+    setattr(Тип, 'заглавље', заглавље)
+    setattr(Тип, 'ред', ред)
+    setattr(Тип, 'елемент', елемент)
+    return Тип
+
+
 class Табела():
     def __init__(бре, tsv, путања, Тип):
         бре._tsv = tsv
