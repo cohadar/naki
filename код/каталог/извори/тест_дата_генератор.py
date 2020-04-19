@@ -2,7 +2,7 @@ import time
 import uuid
 import random
 from enum import IntEnum, unique
-from наки.карте import направи_карте
+from каталог.__main__ import направи_карте
 
 
 @unique

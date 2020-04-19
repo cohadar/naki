@@ -1,5 +1,5 @@
-from наки.карте import направи_карте
 from enum import IntEnum, unique
+from каталог.__main__ import направи_карте
 
 
 @unique

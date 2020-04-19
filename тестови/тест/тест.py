@@ -3,7 +3,7 @@ import uuid
 import random
 from pathlib import Path
 from hashlib import sha256
-from наки.карте import направи_карте
+from каталог.__main__ import направи_карте
 from наки.__main__ import ГлавнаЗидар, ВежбањеЗидар
 from тест.tsv import ТестTSV
 from тест.терминал import ТестТерминал
