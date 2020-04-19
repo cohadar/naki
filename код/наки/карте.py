@@ -1,26 +1,11 @@
 import sys
+from наки import tsv
 from random import shuffle
 from collections import defaultdict, namedtuple
 
 
 Карта = namedtuple('Карта', ['ид', 'врста_карте', 'питање', 'одговор', 'извор', 'линија'])
-
-
-def заглавље():
-    return [п.upper() for п in Карта._fields]
-
-
-def ред(елемент):
-    return list(елемент)
-
-
-def елемент(ред):
-    return Карта(*ред)
-
-
-setattr(Карта, 'заглавље', заглавље)
-setattr(Карта, 'ред', ред)
-setattr(Карта, 'елемент', елемент)
+Карта = tsv.namedtuple(Карта)
 
 
 class ПогледКарти():

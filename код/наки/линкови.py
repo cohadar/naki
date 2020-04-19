@@ -1,25 +1,10 @@
 from collections import namedtuple
 from наки.ид import assert_ид, извор_ид
+from наки import tsv
 
 
 Линк = namedtuple('Линк', ['ид', 'урл'])
-
-
-def заглавље():
-    return [п.upper() for п in Линк._fields]
-
-
-def ред(елемент):
-    return list(елемент)
-
-
-def елемент(ред):
-    return Линк(*ред)
-
-
-setattr(Линк, 'заглавље', заглавље)
-setattr(Линк, 'ред', ред)
-setattr(Линк, 'елемент', елемент)
+Линк = tsv.namedtuple(Линк)
 
 
 class ПогледЛинкова():

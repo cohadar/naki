@@ -3,6 +3,7 @@ from наки.ид import assert_ид
 from datetime import date
 from collections import namedtuple, Counter
 from наки.интервали import БРОЈ_ИНТЕРВАЛА
+from наки import tsv
 
 
 Запис = namedtuple('Запис', [
@@ -13,22 +14,7 @@ from наки.интервали import БРОЈ_ИНТЕРВАЛА
     'нови_интервал'
 ])
 
-
-def заглавље():
-    return [п.upper() for п in Запис._fields]
-
-
-def ред(елемент):
-    return list(елемент)
-
-
-def елемент(ред):
-    return Запис(*ред)
-
-
-setattr(Запис, 'заглавље', заглавље)
-setattr(Запис, 'ред', ред)
-setattr(Запис, 'елемент', елемент)
+Запис = tsv.namedtuple(Запис)
 
 
 class ПогледЗаписа():
