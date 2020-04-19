@@ -7,6 +7,7 @@ from collections import namedtuple
 
 
 Елемент = namedtuple('Елемент', ['ид', 'датум', 'инфинитив', 'презент', 'претерит', 'перфект', 'превод'])
+Елемент = tsv.namedtuple(Елемент)
 
 
 ЕЛЕМЕНТИ = [
@@ -17,37 +18,9 @@ from collections import namedtuple
 ]
 
 
-class ТабелаЕлемената():
-    def __init__(бре, путања):
-        бре._путања = путања
-        бре._елементи = []
-
-    def учитај(бре):
-        бре._елементи.extend(tsv.учитај(бре._путања, бре))
-
-    def додај(бре, елементи):
-        бре._елементи.extend(елементи)
-        tsv.додај(бре._путања, бре, елементи)
-
-    def заглавље(бре):
-        return [п.upper() for п in Елемент._fields]
-
-    def ред(бре, елемент):
-        return list(елемент)
-
-    def елемент(бре, ред):
-        return Елемент(*ред)
-
-    def __len__(бре):
-        return len(бре._елементи)
-
-    def __iter__(бре):
-        return iter(бре._елементи)
-
-
 def test_учитај_фајл():
     path = Path('тест-фајлови/tsv/ok10.tsv')
-    табела = ТабелаЕлемената(path)
+    табела = tsv.Табела(tsv, path, Елемент)
     табела.учитај()
     assert len(табела) == 10
 
@@ -55,28 +28,28 @@ def test_учитај_фајл():
 def test_учитај_фајл_КолонеПогрешнаВеличина():
     path = Path('тест-фајлови/tsv/tabfali.tsv')
     with pytest.raises(tsv.ПарсирањеГрешка):
-        табела = ТабелаЕлемената(path)
+        табела = tsv.Табела(tsv, path, Елемент)
         табела.учитај()
 
 
 def test_учитај_фајл_КолонеИменаСеНеПоклапају():
     path = Path('тест-фајлови/tsv/drugitip.tsv')
     with pytest.raises(tsv.ЗаглављеГрешка):
-        табела = ТабелаЕлемената(path)
+        табела = tsv.Табела(tsv, path, Елемент)
         табела.учитај()
 
 
 def test_додај_на_фајл_постоји(tmpdir):
     copy('тест-фајлови/tsv/ok08.tsv', tmpdir)
     path = Path(tmpdir).joinpath('ok08.tsv')
-    табела = ТабелаЕлемената(path)
+    табела = tsv.Табела(tsv, path, Елемент)
     табела.додај(ЕЛЕМЕНТИ)
     assert фајл_хеш('тест-фајлови/tsv/ok10.tsv') == фајл_хеш(path)
 
 
 def test_додај_на_фајл_непостоји(tmpdir):
     path = Path(tmpdir).joinpath('ok_ново.tsv')
-    табела = ТабелаЕлемената(path)
+    табела = tsv.Табела(tsv, path, Елемент)
     табела.додај(ЕЛЕМЕНТИ)
     assert фајл_хеш('тест-фајлови/tsv/ok02.tsv') == фајл_хеш(path)
 
@@ -85,6 +58,6 @@ def test_додај_на_фајл_КолонеИменаСеНеПоклапај
     copy('тест-фајлови/tsv/drugitip.tsv', tmpdir)
     path = Path(tmpdir).joinpath('drugitip.tsv')
     with pytest.raises(tsv.ЗаглављеГрешка):
-        табела = ТабелаЕлемената(path)
+        табела = tsv.Табела(tsv, path, Елемент)
         табела.додај(ЕЛЕМЕНТИ)
 
