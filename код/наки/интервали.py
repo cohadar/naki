@@ -8,39 +8,23 @@ from collections import namedtuple
 Интервали = namedtuple('Интервали', ['врста_карте', 'датум', 'интервали'])
 
 
-class ТабелаИнтервала():
-    def __init__(бре, tsv, путања):
-        бре._tsv = tsv
-        бре._путања = путања
-        бре._елементи = []
+def заглавље():
+    return [п.upper() for п in Интервали._fields]
 
-    def учитај(бре):
-        бре._елементи.extend(бре._tsv.учитај(бре._путања, бре))
-        for е in бре._елементи:
-            assert isinstance(е, Интервали)
 
-    def додај(бре, елементи):
-        бре._елементи.extend(елементи)
-        бре._tsv.додај(бре._путања, бре, елементи)
-        for е in бре._елементи:
-            assert isinstance(е, Интервали)
+def ред(елемент):
+    return [елемент[0], елемент[1].isoformat(), ', '.join(str(е) for е in елемент[2])]
 
-    def __len__(бре):
-        return len(бре._елементи)
 
-    def __iter__(бре):
-        return iter(бре._елементи)
+def елемент(ред):
+    ив = [int(и.strip()) for и in ред[2].split(',')]
+    assert all(а < б for (а, б) in zip(ив[:-1], ив[1:]))
+    return Интервали(ред[0], date.fromisoformat(ред[1]), ив)
 
-    def заглавље(бре):
-        return [п.upper() for п in Интервали._fields]
 
-    def ред(бре, елемент):
-        return [елемент[0], елемент[1].isoformat(), ', '.join(str(е) for е in елемент[2])]
-
-    def елемент(бре, ред):
-        ив = [int(и.strip()) for и in ред[2].split(',')]
-        assert all(а < б for (а, б) in zip(ив[:-1], ив[1:]))
-        return Интервали(ред[0], date.fromisoformat(ред[1]), ив)
+setattr(Интервали, 'заглавље', заглавље)
+setattr(Интервали, 'ред', ред)
+setattr(Интервали, 'елемент', елемент)
 
 
 class ПогледИнтервала():
