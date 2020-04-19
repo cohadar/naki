@@ -90,23 +90,3 @@ def test_додај_на_фајл_КолонеИменаСеНеПоклапај
     with pytest.raises(tsv.КолонеИменаСеНеПоклапајуГрешка):
         tsv.додај_на_фајл(path, КолонеПогрешноИме, РЕДОВИ)
 
-
-def test_препиши_фајл_нови(tmpdir):
-    copy('тест-фајлови/tsv/ok10.tsv', tmpdir)
-    фајл1 = Path(tmpdir).joinpath('ok10.tsv')
-    фајл2 = Path(tmpdir).joinpath('ok10_нови.tsv')
-    rows = tsv.учитај_фајл(фајл1, Колоне)
-    tsv.препиши_фајл(фајл2, Колоне, rows)
-    assert фајл_хеш(фајл1) == фајл_хеш(фајл2)
-
-
-def test_препиши_фајл_постојећи(tmpdir):
-    copy('тест-фајлови/tsv/ok10.tsv', tmpdir)
-    copy('тест-фајлови/tsv/ok02.tsv', tmpdir)
-    фајл1 = Path(tmpdir).joinpath('ok10.tsv')
-    фајл2 = Path(tmpdir).joinpath('ok02.tsv')
-    assert фајл_хеш(фајл1) != фајл_хеш(фајл2)
-    rows = tsv.учитај_фајл(фајл1, Колоне)
-    tsv.препиши_фајл(фајл2, Колоне, rows)
-    assert фајл_хеш(фајл1) == фајл_хеш(фајл2)
-

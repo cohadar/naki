@@ -36,16 +36,6 @@ def учитај(путања, неко):
                     raise ПарсирањеГрешка(f'(линија:{и}){ред}', е)
 
 
-def препиши(путања, неко):
-    """ препиши цео фајл од почетка """
-    assert isinstance(путања, pathlib.Path), путања
-    with путања.open('w', newline='') as ф:
-        tsv = csv.writer(ф, delimiter='\t', lineterminator='\n')
-        tsv.writerow(неко.заглавље())
-        for елемент in неко:
-            tsv.writerow(неко.ред(елемент))
-
-
 def додај(путања, неко, елементи):
     assert isinstance(путања, pathlib.Path), путања
     """ додај елементе на крај фајла """
@@ -83,18 +73,6 @@ def учитај_фајл(путања, колоне):
         if колона.name != заглавље[и]:
             raise КолонеИменаСеНеПоклапајуГрешка(f'[{путања}]ЗАГЛАВЉА_СЕ_НЕ_ПОКЛАПАЈУ: {колона.name} != {заглавље[и]}')
     return редови
-
-
-def препиши_фајл(путања, колоне, редови):
-    assert isinstance(путања, pathlib.Path), путања
-    assert isinstance(колоне, EnumMeta), колоне
-    with путања.open('w', newline='') as ф:
-        tsv = csv.writer(ф, delimiter='\t', lineterminator='\n')
-        tsv.writerow([к.name for к in колоне])
-        for и, ред in enumerate(редови, 1):
-            if len(колоне) != len(ред):
-                raise КолонеПогрешнаВеличинаГрешка(f'[{путања}][ЛИНИЈА: {и}] очекивано: {len(колоне)}, нађено: {len(ред)}')
-            tsv.writerow(ред)
 
 
 def додај_на_фајл(путања, колоне, редови):
