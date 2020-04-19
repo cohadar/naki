@@ -24,6 +24,7 @@ def учитај(путања, неко):
     assert isinstance(путања, pathlib.Path), путања
     with путања.open('r', newline='') as ф:
         tsv = csv.reader(ф, delimiter='\t')
+        елементи = []
         for и, ред in enumerate(tsv, 1):
             if и == 1:
                 заг = неко.заглавље()
@@ -31,9 +32,10 @@ def учитај(путања, неко):
                     raise ЗаглављеГрешка(f"Заглавље се не поклапа: {заг} {ред}")
             else:
                 try:
-                    неко.append(неко.елемент(ред))
+                    елементи.append(неко.елемент(ред))
                 except Exception as е:
                     raise ПарсирањеГрешка(f'(линија:{и}){ред}', е)
+        return елементи
 
 
 def додај(путања, неко, елементи):
