@@ -1,7 +1,7 @@
 from наки.унос import Унос, Главна
 from наки.ui import UI
 from pathlib import Path
-from тест import ТестТерминал
+from терминал import ТестТерминал
 from наки.команда import КОД_ЦИР_К
 
 
