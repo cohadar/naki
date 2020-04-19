@@ -3,7 +3,7 @@ from наки import tsv
 from enum import IntEnum, unique
 from pathlib import Path
 from shutil import copy
-from тест import фајл_хеш
+from тест.тест import фајл_хеш
 
 
 @unique

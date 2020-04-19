@@ -1,8 +1,5 @@
 from pathlib import Path
-from наки.вежбање import Вежбање
-from наки.шпил import Шпил
-from наки.ui import UI
-from тест import ТестГлавнаЗидар, ТестВежбањеЗидар
+from тест.тест import ТестГлавнаЗидар
 from наки.команда import КОД_СПЕЈС
 from наки.команда import КОД_ЕНТЕР
 from наки.команда import КОД_ЦИР_К

@@ -1,5 +1,5 @@
 from pathlib import Path
-from тест import ТестГлавнаЗидар
+from тест.тест import ТестГлавнаЗидар
 from наки.команда import КОД_ЦИР_К
 from наки.команда import КОД_ЦИР_П
 from наки.команда import КОД_ЦИР_И

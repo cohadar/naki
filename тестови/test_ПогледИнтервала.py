@@ -2,7 +2,7 @@ import pytest
 import datetime
 from pathlib import Path
 from наки.интервали import ПогледИнтервала
-from тест import ТестТабела
+from тест.табела import ТестТабела
 
 
 def ПИВ():

@@ -2,7 +2,7 @@ import pytest
 from наки import tsv
 from pathlib import Path
 from shutil import copy
-from тест import фајл_хеш
+from тест.тест import фајл_хеш
 from collections import namedtuple
 
 
