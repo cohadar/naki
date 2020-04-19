@@ -3,12 +3,68 @@ import pathlib
 from enum import EnumMeta
 
 
+class ЗаглављеГрешка(ValueError):
+    pass
+
+
+class ПарсирањеГрешка(ValueError):
+    pass
+
+
 class КолонеПогрешнаВеличинаГрешка(ValueError):
     pass
 
 
 class КолонеИменаСеНеПоклапајуГрешка(ValueError):
     pass
+
+
+def учитај(путања, неко):
+    """ учитај фајл и парсирај елементе """
+    assert isinstance(путања, pathlib.Path), путања
+    with путања.open('r', newline='') as ф:
+        tsv = csv.reader(ф, delimiter='\t')
+        for и, ред in enumerate(tsv, 1):
+            if и == 1:
+                заг = неко.заглавље()
+                if ред != заг:
+                    raise ЗаглављеГрешка(f"Заглавље се не поклапа: {заг} {ред}")
+            else:
+                try:
+                    неко.append(неко.елемент(ред))
+                except Exception as е:
+                    raise ПарсирањеГрешка(f'(линија:{и}){ред}', е)
+
+
+def препиши(путања, неко):
+    """ препиши цео фајл од почетка """
+    assert isinstance(путања, pathlib.Path), путања
+    with путања.open('w', newline='') as ф:
+        tsv = csv.writer(ф, delimiter='\t', lineterminator='\n')
+        tsv.writerow(неко.заглавље())
+        for елемент in неко:
+            tsv.writerow(неко.ред(елемент))
+
+
+def додај(путања, неко, елементи):
+    assert isinstance(путања, pathlib.Path), путања
+    """ додај елементе на крај фајла """
+    додај_заглавље = False
+    if путања.exists():
+        with путања.open('r', newline='') as ф:
+            tsv = csv.reader(ф, delimiter='\t')
+            ред = next(tsv)
+            заг = неко.заглавље()
+            if ред != заг:
+                raise ЗаглављеГрешка(f"Заглавље се не поклапа: {заг} {ред}")
+    else:
+        додај_заглавље = True
+    with путања.open('a', newline='') as ф:
+        tsv = csv.writer(ф, delimiter='\t', lineterminator='\n')
+        if додај_заглавље:
+            tsv.writerow(неко.заглавље())
+        for елемент in елементи:
+            tsv.writerow(неко.ред(елемент))
 
 
 def учитај_фајл(путања, колоне):

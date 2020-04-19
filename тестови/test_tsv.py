@@ -4,7 +4,6 @@ from enum import IntEnum, unique
 from pathlib import Path
 from shutil import copy
 from тест import фајл_хеш
-from collections import namedtuple
 
 
 @unique
