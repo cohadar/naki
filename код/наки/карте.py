@@ -1,5 +1,4 @@
 import sys
-from наки import tsv
 from random import shuffle
 from enum import IntEnum, unique
 from collections import defaultdict, namedtuple
@@ -19,16 +18,17 @@ class КартаЕнум(IntEnum):
 
 
 class ТабелаКарти():
-    def __init__(бре, путања):
+    def __init__(бре, tsv, путања):
+        бре._tsv = tsv
         бре._путања = путања
         бре._редови = []
 
     def учитај(бре):
-        бре._редови = tsv.учитај_фајл(бре._путања, КартаЕнум) if бре._путања.exists() else []
+        бре._редови = бре._tsv.учитај_фајл(бре._путања, КартаЕнум)
 
     def додај(бре, редови):
         бре._редови.extend(редови)
-        tsv.додај_на_фајл(бре._путања, КартаЕнум, редови)
+        бре._tsv.додај_на_фајл(бре._путања, КартаЕнум, редови)
 
     def __len__(бре):
         return len(бре._редови)

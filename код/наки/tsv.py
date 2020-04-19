@@ -22,6 +22,8 @@ class КолонеИменаСеНеПоклапајуГрешка(ValueError):
 def учитај(путања, неко):
     """ учитај фајл и парсирај елементе """
     assert isinstance(путања, Path), путања
+    if not путања.exists():
+        return []
     with путања.open('r', newline='') as ф:
         tsv = csv.reader(ф, delimiter='\t')
         елементи = []
@@ -63,6 +65,8 @@ def учитај_фајл(путања, колоне):
     """ враћа листу редова """
     assert isinstance(путања, Path), путања
     assert isinstance(колоне, EnumMeta), колоне
+    if not путања.exists():
+        return []
     редови = []
     with путања.open('r', newline='') as ф:
         tsv = csv.reader(ф, delimiter='\t')
