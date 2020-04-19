@@ -1,5 +1,5 @@
 import csv
-import pathlib
+from pathlib import Path
 from enum import EnumMeta
 
 
@@ -21,7 +21,7 @@ class КолонеИменаСеНеПоклапајуГрешка(ValueError):
 
 def учитај(путања, неко):
     """ учитај фајл и парсирај елементе """
-    assert isinstance(путања, pathlib.Path), путања
+    assert isinstance(путања, Path), путања
     with путања.open('r', newline='') as ф:
         tsv = csv.reader(ф, delimiter='\t')
         елементи = []
@@ -39,7 +39,7 @@ def учитај(путања, неко):
 
 
 def додај(путања, неко, елементи):
-    assert isinstance(путања, pathlib.Path), путања
+    assert isinstance(путања, Path), путања
     """ додај елементе на крај фајла """
     додај_заглавље = False
     if путања.exists():
@@ -61,7 +61,7 @@ def додај(путања, неко, елементи):
 
 def учитај_фајл(путања, колоне):
     """ враћа листу редова """
-    assert isinstance(путања, pathlib.Path), путања
+    assert isinstance(путања, Path), путања
     assert isinstance(колоне, EnumMeta), колоне
     редови = []
     with путања.open('r', newline='') as ф:
@@ -78,7 +78,7 @@ def учитај_фајл(путања, колоне):
 
 
 def додај_на_фајл(путања, колоне, редови):
-    assert isinstance(путања, pathlib.Path), путања
+    assert isinstance(путања, Path), путања
     assert isinstance(колоне, EnumMeta), колоне
     """ додај редове у фајл """
     додај_заглавље = False
