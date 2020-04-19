@@ -1,6 +1,5 @@
 import csv
 from pathlib import Path
-from enum import EnumMeta
 
 
 class ЗаглављеГрешка(ValueError):
@@ -8,14 +7,6 @@ class ЗаглављеГрешка(ValueError):
 
 
 class ПарсирањеГрешка(ValueError):
-    pass
-
-
-class КолонеПогрешнаВеличинаГрешка(ValueError):
-    pass
-
-
-class КолонеИменаСеНеПоклапајуГрешка(ValueError):
     pass
 
 
@@ -97,48 +88,4 @@ def додај(путања, Тип, елементи):
             tsv.writerow(Тип.заглавље())
         for елемент in елементи:
             tsv.writerow(Тип.ред(елемент))
-
-
-def учитај_фајл(путања, колоне):
-    """ враћа листу редова """
-    assert isinstance(путања, Path), путања
-    assert isinstance(колоне, EnumMeta), колоне
-    if not путања.exists():
-        return []
-    редови = []
-    with путања.open('r', newline='') as ф:
-        tsv = csv.reader(ф, delimiter='\t')
-        for и, ред in enumerate(tsv, 1):
-            if len(колоне) != len(ред):
-                raise КолонеПогрешнаВеличинаГрешка(f'[{путања}][ЛИНИЈА: {и}] очекивано: {len(колоне)}, нађено: {len(ред)}')
-            редови.append(ред)
-    заглавље, редови = редови[0], редови[1:]
-    for и, колона in enumerate(колоне):
-        if колона.name != заглавље[и]:
-            raise КолонеИменаСеНеПоклапајуГрешка(f'[{путања}]ЗАГЛАВЉА_СЕ_НЕ_ПОКЛАПАЈУ: {колона.name} != {заглавље[и]}')
-    return редови
-
-
-def додај_на_фајл(путања, колоне, редови):
-    assert isinstance(путања, Path), путања
-    assert isinstance(колоне, EnumMeta), колоне
-    """ додај редове у фајл """
-    додај_заглавље = False
-    if путања.exists():
-        with путања.open('r', newline='') as ф:
-            tsv = csv.reader(ф, delimiter='\t')
-            заглавље = next(tsv)
-            for и, колона in enumerate(колоне):
-                if колона.name != заглавље[и]:
-                    raise КолонеИменаСеНеПоклапајуГрешка(f'[{путања}]ЗАГЛАВЉА_СЕ_НЕ_ПОКЛАПАЈУ: {колона.name} != {заглавље[и]}')
-    else:
-        додај_заглавље = True
-    with путања.open('a', newline='') as ф:
-        tsv = csv.writer(ф, delimiter='\t', lineterminator='\n')
-        if додај_заглавље:
-            tsv.writerow([к.name for к in колоне])
-        for и, ред in enumerate(редови, 1):
-            if len(колоне) != len(ред):
-                raise КолонеПогрешнаВеличинаГрешка(f'[{путања}][ЛИНИЈА: {и}] очекивано: {len(колоне)}, нађено: {len(ред)}')
-            tsv.writerow(ред)
 
