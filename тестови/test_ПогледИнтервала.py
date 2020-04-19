@@ -2,8 +2,7 @@ import pytest
 import datetime
 from pathlib import Path
 from наки.интервали import ПогледИнтервала, Интервали
-from тест.tsv import ТестTSV
-from наки.tsv import Табела
+from тест.tsv import Табела
 
 И = Интервали("ДАМИР",  datetime.date(2020, 5, 17), [1, 7, 15, 38, 94, 234, 586, 1465, 3662])
 
@@ -19,7 +18,7 @@ def СИРОВИ():
 
 
 def ПИВ():
-    ти = Табела(ТестTSV(СИРОВИ()), Path('интервали.tsv'), Интервали)
+    ти = Табела(Path('интервали.tsv'), Интервали, СИРОВИ())
     return ПогледИнтервала(ти), ти
 
 
