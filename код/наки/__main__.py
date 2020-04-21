@@ -17,11 +17,17 @@ class Контејнер(containers.DynamicContainer):
     def листа_дирова(к, каталог):
         return [фајл for фајл in каталог.iterdir() if фајл.is_dir() and not фајл.name.startswith('__')]
 
-    def листа_вежбања(к):
+    def листа_шпилова(к):
         рез = []
         for дир in к.дирови():
             к.дир.override(providers.Object(дир))
-            рез.append(к.вежбање())
+            рез.append(к.шпил())
+        return рез
+
+    def листа_вежбања(к):
+        рез = []
+        for шпил in к.шпилови():
+            рез.append(к.вежбање(шпил=шпил))
         return рез
 
     def __init__(к):
@@ -52,6 +58,7 @@ class Контејнер(containers.DynamicContainer):
             п_карти=к.п_карти,
             п_линкова=к.п_линкова,
             п_записа=к.п_записа)
+        к.шпилови = providers.Callable(к.листа_шпилова)
 
         к.терминал = providers.Factory(Терминал)
         к.ui = providers.Singleton(UI, терминал=к.терминал)

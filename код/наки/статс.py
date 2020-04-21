@@ -1,5 +1,4 @@
 from наки.__main__ import Контејнер
-import dependency_injector.providers as providers
 
 
 class Статистика:
@@ -33,9 +32,7 @@ class Статистика:
 
 def главна():
     к = Контејнер()
-    for дир in к.дирови():
-        к.дир.override(providers.Object(дир))
-        шпил = к.шпил()
+    for шпил in к.шпилови():
         шпил.припреми()
         Статистика(шпил.име(), шпил.п_карти, шпил.п_записа).штампај()
 
