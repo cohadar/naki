@@ -47,21 +47,18 @@ class Контејнер(containers.DynamicContainer):
         return [фајл for фајл in каталог.iterdir() if фајл.is_dir() and not фајл.name.startswith('__')]
 
     def листа_шпил_контејнера(к):
-        return [к.шпил_контејнер(дир=дир) for дир in к.дирови()]
+        return [ШпилКонтејнер(дир=дир) for дир in к.дирови()]
 
     def листа_вежбања(к):
-        return [к.вежбање(шпил=шк.шпил()) for шк in к.шпил_контејнери()]
+        return [Вежбање(ui=к.ui(), путања_каталога=к.каталог(), шпил=шк.шпил()) for шк in к.шпил_контејнери()]
 
     def __init__(к):
         super().__init__()
         к.каталог = providers.Object(ПУТАЊА_КАТАЛОГА)
         к.дирови = providers.Callable(к.листа_дирова, каталог=к.каталог)
-        к.шпил_контејнер = providers.Factory(ШпилКонтејнер)
         к.шпил_контејнери = providers.Callable(к.листа_шпил_контејнера)
-
         к.терминал = providers.Factory(Терминал)
         к.ui = providers.Singleton(UI, терминал=к.терминал)
-        к.вежбање = providers.Factory(Вежбање, ui=к.ui, путања_каталога=к.каталог)
         к.вежбања = providers.Callable(к.листа_вежбања)
         к.главна = providers.Factory(Главна, ui=к.ui, вежбања=к.вежбања)
 
