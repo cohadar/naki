@@ -1,4 +1,5 @@
 from наки.конфигурација import ПУТАЊА_КАТАЛОГА
+from pathlib import Path
 from collections import namedtuple
 import dependency_injector.containers as containers
 import dependency_injector.providers as providers
@@ -34,14 +35,19 @@ class Контејнер(containers.DynamicContainer):
 
     def __init__(к):
         super().__init__()
-        к.дир = providers.Object(None)
         к.каталог = providers.Object(ПУТАЊА_КАТАЛОГА)
         к.дирови = providers.Callable(к.листа_дирова, каталог=к.каталог)
 
-        к.т_интервала = providers.Callable(Табела, путања=к.дир, Тип='Интервали')
-        к.т_карти = providers.Factory(Табела, путања=к.дир, Тип='Карте')
-        к.т_линкова = providers.Factory(Табела, путања=к.дир, Тип='Линкови')
-        к.т_записа = providers.Factory(Табела, путања=к.дир, Тип='Запис')
+        к.дир = providers.Object(None)
+        к.путања_интервали = providers.Callable(lambda дир: дир.joinpath('интервали.tsv'), к.дир)
+        к.путања_карте = providers.Callable(lambda дир: дир.joinpath('карте.tsv'), к.дир)
+        к.путања_линкови = providers.Callable(lambda дир: дир.joinpath('линкови.tsv'), к.дир)
+        к.путања_запис = providers.Callable(lambda дир: дир.joinpath('запис.tsv'), к.дир)
+
+        к.т_интервала = providers.Callable(Табела, путања=к.путања_интервали, Тип='Интервали')
+        к.т_карти = providers.Factory(Табела, путања=к.путања_карте, Тип='Карте')
+        к.т_линкова = providers.Factory(Табела, путања=к.путања_линкови, Тип='Линкови')
+        к.т_записа = providers.Factory(Табела, путања=к.путања_запис, Тип='Запис')
 
         к.п_интервала = providers.Factory(ПогледИнтервала, табела=к.т_интервала)
         к.п_карти = providers.Factory(ПогледКарти, табела=к.т_карти)
@@ -67,13 +73,13 @@ class ТестКонтејнер(Контејнер):
     def __init__(к):
         super().__init__()
         к.терминал.override(providers.Factory(ТестТерминал, команде=[4, 5]))
-        к.т_интервала.override(providers.Factory(ТестТабела, путања=к.дир, Тип='Интервали', на_диску=[1, 2]))
-        к.т_карти.override(providers.Factory(ТестТабела, путања=к.дир, Тип='Карте', на_диску=[1, 2]))
-        к.т_линкова.override(providers.Factory(ТестТабела, путања=к.дир, Тип='Линкови', на_диску=[1, 2]))
-        к.т_записа.override(providers.Factory(ТестТабела, путања=к.дир, Тип='Запис', на_диску=[1, 2]))
+        к.т_интервала.override(providers.Factory(ТестТабела, путања=к.путања_интервали, Тип='Интервали', на_диску=[1, 2]))
+        к.т_карти.override(providers.Factory(ТестТабела, путања=к.путања_карте, Тип='Карте', на_диску=[1, 2]))
+        к.т_линкова.override(providers.Factory(ТестТабела, путања=к.путања_линкови, Тип='Линкови', на_диску=[1, 2]))
+        к.т_записа.override(providers.Factory(ТестТабела, путања=к.путања_запис, Тип='Запис', на_диску=[1, 2]))
 
     def листа_дирова(к, каталог):
-        return ['aaa', 'bbb', 'ccc']
+        return [Path('aaa'), Path('bbb'), Path('ccc')]
 
 
 def main():
