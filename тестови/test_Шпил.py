@@ -1,11 +1,10 @@
-from наки.конфигурација import ПУТАЊА_КАТАЛОГА
-from наки.__main__ import ГлавнаЗидар
+from наки.__main__ import Контејнер
+import dependency_injector.providers as providers
 
 
 def test_припреми():
-    гз = ГлавнаЗидар(ПУТАЊА_КАТАЛОГА)
-    лзв = гз.листа_зидара_вежбања()
-    for зв in лзв:
-        шпил = зв.шпил()
+    к = Контејнер()
+    for дир in к.дирови():
+        к.дир.override(providers.Object(дир))
+        шпил = к.шпил()
         шпил.припреми()
-
