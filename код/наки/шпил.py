@@ -41,7 +41,7 @@ class Шпил():
             assert оцена in [0, 1, 2], f"инвалидна оцена: {оцена}"
             бре.п_записа.додај_нови_интервал(ид, оцена)
         except AssertionError as e:
-            raise AssertionError(бре.име(), e)
+            raise AssertionError(бре.име()) from e
 
     def име(бре):
         return бре._дир.name
