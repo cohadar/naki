@@ -1,3 +1,4 @@
+
 дне periodic git push
 custom tastatura za cirilicu koja ne menja spec karaktere
 python dependency injection!

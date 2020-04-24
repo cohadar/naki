@@ -1,9 +1,10 @@
 from наки.конфигурација import ПУТАЊА_КАТАЛОГА
-from наки.вежбање import Вежбање
 from наки.шпил import Шпил
 from наки.главна import Главна
+from наки.главна_ui import ГлавнаUI
+from наки.шпил_ui import ШпилUI
 from наки.терминал import Терминал
-from наки.ui import UI
+from наки.команда import Регистар
 from наки.интервали import ПогледИнтервала, Интервали
 from наки.запис import ПогледЗаписа, Запис
 from наки.линкови import ПогледЛинкова, Линк
@@ -14,8 +15,9 @@ import dependency_injector.providers as providers
 
 
 class ШпилКонтејнер(containers.DynamicContainer):
-    def __init__(к, дир):
+    def __init__(к, отац, дир):
         super().__init__()
+        к.отац = отац
         к.дир = providers.Object(дир)
 
         к.путања_интервали = providers.Callable(lambda дир: дир.joinpath('интервали.tsv'), к.дир)
@@ -35,6 +37,7 @@ class ШпилКонтејнер(containers.DynamicContainer):
 
         к.шпил = providers.Factory(
             Шпил,
+            ui=к.отац.шпил_ui,
             дир=к.дир,
             п_интервала=к.п_интервала,
             п_карти=к.п_карти,
@@ -46,21 +49,20 @@ class Контејнер(containers.DynamicContainer):
     def листа_дирова(к, каталог):
         return [фајл for фајл in каталог.iterdir() if фајл.is_dir() and not фајл.name.startswith('__')]
 
-    def листа_шпил_контејнера(к):
-        return [ШпилКонтејнер(дир=дир) for дир in к.дирови()]
-
-    def листа_вежбања(к):
-        return [Вежбање(ui=к.ui(), путања_каталога=к.каталог(), шпил=шк.шпил()) for шк in к.шпил_контејнери()]
+    def листа_шпилова(к):
+        return [ШпилКонтејнер(отац=к, дир=дир).шпил() for дир in к.дирови()]
 
     def __init__(к):
         super().__init__()
         к.каталог = providers.Object(ПУТАЊА_КАТАЛОГА)
         к.дирови = providers.Callable(к.листа_дирова, каталог=к.каталог)
-        к.шпил_контејнери = providers.Callable(к.листа_шпил_контејнера)
-        к.терминал = providers.Factory(Терминал)
-        к.ui = providers.Singleton(UI, терминал=к.терминал)
-        к.вежбања = providers.Callable(к.листа_вежбања)
-        к.главна = providers.Factory(Главна, ui=к.ui, вежбања=к.вежбања)
+        к.шпилови = providers.Callable(к.листа_шпилова)
+        к.терминал = providers.Singleton(Терминал)
+        к.регистар = providers.Factory(Регистар)
+        к.главна_ui = providers.Factory(ГлавнаUI, регистар=к.регистар, терминал=к.терминал)
+        к.шпил_ui = providers.Factory(
+            ШпилUI, терминал=к.терминал, регистар_питање=к.регистар, регистар_одговор=к.регистар)
+        к.главна = providers.Factory(Главна, ui=к.главна_ui, шпилови=к.шпилови)
 
 
 def главна():
