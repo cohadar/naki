@@ -42,7 +42,7 @@ class ТестКонтејнер(Контејнер):
         к.команде = providers.Object(команде)
         к.дужине = providers.Object(дужине)
         к.каталог = providers.Object(Path('лажни-каталог'))
-        к.терминал.override(providers.Factory(ТестТерминал, команде=к.команде))
+        к.терминал.override(providers.Singleton(ТестТерминал, команде=к.команде))
 
     def листа_дирова(к, каталог):
         return [Path('дир').joinpath(str(и)) for и in range(len(к.дужине()))]
