@@ -4,6 +4,7 @@ from наки.главна import Главна
 from наки.главна_ui import ГлавнаUI
 from наки.питање_ui import ПитањеUI
 from наки.одговор_ui import ОдговорUI
+from наки.ui_стање import UIСтање
 from наки.терминал import Терминал
 from наки.команда import Регистар
 from наки.интервали import ПогледИнтервала, Интервали
@@ -61,9 +62,10 @@ class Контејнер(containers.DynamicContainer):
         к.шпилови = providers.Callable(к.листа_шпилова)
         к.терминал = providers.Singleton(Терминал)
         к.регистар = providers.Factory(Регистар)
-        к.главна_ui = providers.Factory(ГлавнаUI, терминал=к.терминал, регистар=к.регистар)
-        к.питање_ui = providers.Factory(ПитањеUI, терминал=к.терминал, регистар=к.регистар)
-        к.одговор_ui = providers.Factory(ОдговорUI, терминал=к.терминал, регистар=к.регистар)
+        к.ui_стање = providers.Singleton(UIСтање)
+        к.главна_ui = providers.Factory(ГлавнаUI, терминал=к.терминал, регистар=к.регистар, стање=к.ui_стање)
+        к.питање_ui = providers.Factory(ПитањеUI, терминал=к.терминал, регистар=к.регистар, стање=к.ui_стање)
+        к.одговор_ui = providers.Factory(ОдговорUI, терминал=к.терминал, регистар=к.регистар, стање=к.ui_стање)
         к.главна = providers.Factory(Главна, ui=к.главна_ui, шпилови=к.шпилови)
 
 
