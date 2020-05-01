@@ -1,3 +1,4 @@
+карте.tsv isto razbiti na direktorijum kao i извор!
 
 дне periodic git push
 custom tastatura za cirilicu koja ne menja spec karaktere
