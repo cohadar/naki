@@ -62,6 +62,8 @@ class Табела():
                     if ред != заг:
                         raise ЗаглављеГрешка(f"Заглавље се не поклапа: {заг} {ред}")
                 else:
+                    if not ред:
+                        continue
                     try:
                         елементи.append(Тип.елемент(ред))
                     except Exception as е:
