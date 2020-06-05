@@ -1,3 +1,5 @@
+spejsovi u izvor.tsv prave da se maši edit lokacija
+
 карте.tsv isto razbiti na direktorijum kao i извор!
 
 дне periodic git push
