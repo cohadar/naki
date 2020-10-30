@@ -1,1 +1,0 @@
-git push -d origin <branch_name>
