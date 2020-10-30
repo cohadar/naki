@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu
-path="$HOME/me/naki/исечци/исечак"
+path="$HOME/me/g/naki/исечци/исечак"
 if [[ $# -eq 0 ]]; then
 	name=$(python -c "import uuid; print(uuid.uuid4().hex + '.txt')")
 	$EDITOR "$path/$name"
